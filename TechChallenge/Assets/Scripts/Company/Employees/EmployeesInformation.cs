@@ -13,6 +13,11 @@ namespace Company.Employees
             employeesAmount = 0;
         }
 
+        public EmployeesInformation(int employeesAmount)
+        {
+            this.employeesAmount = employeesAmount;
+        }
+
         public void SetEmployeesAmount(int employeesAmount)
         {
             this.employeesAmount = employeesAmount;

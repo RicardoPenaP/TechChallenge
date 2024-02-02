@@ -8,14 +8,12 @@ using Company.Enums;
 
 public class CompanySectionEmployeesAmountTest
 {    
-    private int juniorsAmount;
-    private int semiSeniorsAmount;
-    private int seniorsAmount;
-
     [Test]
     public void HRSectionEmployeesTest()
     {
-        
+        Dictionary<SeniorityLevels, EmployeesInformation> hrSectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+      
+        hrSectionEmployees.Add(SeniorityLevels.Junior, );
     }
 
    
