@@ -5,15 +5,15 @@ using NUnit.Framework;
 using System.Collections.Generic;
 
 public class CompanySectionEmployeesAmountTest
-{    
+{
     [Test]
     public void HRSectionEmployeesTest()
     {
         Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
-      
-        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(5,0));
-        sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(2, 0));
-        sectionEmployees.Add(SeniorityLevels.Junior, new EmployeesInformation(13, 0));
+
+        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(5, 0, 0));
+        sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(2, 0, 0));
+        sectionEmployees.Add(SeniorityLevels.Junior, new EmployeesInformation(13, 0, 0));
 
         CompanySection companySection = new CompanySection();
         companySection.SetSectionEmployeesDictionary(sectionEmployees);
@@ -26,9 +26,9 @@ public class CompanySectionEmployeesAmountTest
     {
         Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
 
-        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(50, 0));
-        sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(68, 0));
-        sectionEmployees.Add(SeniorityLevels.Junior, new EmployeesInformation(32, 0));
+        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(50, 0, 0));
+        sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(68, 0, 0));
+        sectionEmployees.Add(SeniorityLevels.Junior, new EmployeesInformation(32, 0, 0));
 
         CompanySection companySection = new CompanySection();
         companySection.SetSectionEmployeesDictionary(sectionEmployees);
@@ -41,9 +41,9 @@ public class CompanySectionEmployeesAmountTest
     {
         Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
 
-        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(5, 0));
-        sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(20, 0));
-        
+        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(5, 0, 0));
+        sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(20, 0, 0));
+
         CompanySection companySection = new CompanySection();
         companySection.SetSectionEmployeesDictionary(sectionEmployees);
 
@@ -55,8 +55,8 @@ public class CompanySectionEmployeesAmountTest
     {
         Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
 
-        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(10, 0));        
-        sectionEmployees.Add(SeniorityLevels.Junior, new EmployeesInformation(15, 0));
+        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(10, 0, 0));
+        sectionEmployees.Add(SeniorityLevels.Junior, new EmployeesInformation(15, 0, 0));
 
         CompanySection companySection = new CompanySection();
         companySection.SetSectionEmployeesDictionary(sectionEmployees);
@@ -69,8 +69,8 @@ public class CompanySectionEmployeesAmountTest
     {
         Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
 
-        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(10, 0));
-        sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(20, 0));       
+        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(10, 0, 0));
+        sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(20, 0, 0));
 
         CompanySection companySection = new CompanySection();
         companySection.SetSectionEmployeesDictionary(sectionEmployees);
@@ -83,7 +83,7 @@ public class CompanySectionEmployeesAmountTest
     {
         Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
 
-        sectionEmployees.Add(SeniorityLevels.None, new EmployeesInformation(1, 0));        
+        sectionEmployees.Add(SeniorityLevels.None, new EmployeesInformation(1, 0, 0));
 
         CompanySection companySection = new CompanySection();
         companySection.SetSectionEmployeesDictionary(sectionEmployees);
