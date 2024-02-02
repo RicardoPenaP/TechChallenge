@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Company
+namespace Company.Interfaces
 {
     public interface IEmployeeProperty<T>
     {
