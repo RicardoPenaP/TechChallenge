@@ -9,8 +9,7 @@ namespace Company.Employees
         public int EmployeesAmount { get { return employeesAmount; } }
 
         public EmployeesInformation()
-        {
-           
+        {           
             employeesAmount = 0;
         }
 
