@@ -1,7 +1,9 @@
 {
     "name": "Company",
     "rootNamespace": "Company",
-    "references": [],
+    "references": [
+        "GUID:aa480ee2d6ff5c5409fe4580bf368365"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
