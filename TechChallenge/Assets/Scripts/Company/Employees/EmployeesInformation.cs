@@ -4,10 +4,12 @@ namespace Company.Employees
     {
         private int employeesAmount;
         private float salaryIncrementPercentage;
-        private int salaryAmount;
+        private float salaryAmount;
 
         public int EmployeesAmount { get { return employeesAmount; } }
         public float SalaryIncrementPercentage { get { return salaryIncrementPercentage; } }
+
+        public float SalaryAmount { get { return salaryAmount; } }
 
         public EmployeesInformation()
         {
@@ -20,6 +22,11 @@ namespace Company.Employees
         {
             this.employeesAmount = employeesAmount;
             this.salaryIncrementPercentage = salaryIncrementPercentage;
+            this.salaryAmount = salaryAmount;
+        }
+
+        public void SetSalaryAmount(float salaryAmount)
+        {
             this.salaryAmount = salaryAmount;
         }
     }

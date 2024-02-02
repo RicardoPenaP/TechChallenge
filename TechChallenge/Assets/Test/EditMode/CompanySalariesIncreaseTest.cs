@@ -6,6 +6,7 @@ using UnityEngine.TestTools;
 using Company;
 using Company.Employees;
 using Company.Enums;
+using Tools.Calculators;
 
 public class CompanySalariesIncreaseTest
 {
