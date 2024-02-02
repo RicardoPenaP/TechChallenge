@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Company.Enums;
 using Company.Employees;
+using Company.Enums;
+using System.Collections.Generic;
 
 namespace Company
 {
