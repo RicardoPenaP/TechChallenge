@@ -7,7 +7,7 @@ using Company;
 using Company.Employees;
 using Company.Enums;
 
-public class CompanySalariesUpgradingTest
+public class CompanySalariesIncreaseTest
 {
     
 }
