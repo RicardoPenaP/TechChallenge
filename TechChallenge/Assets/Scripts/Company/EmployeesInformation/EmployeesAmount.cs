@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Company.Interfaces;
 
-namespace Company
+namespace Company.EmployeesInformation
 {
     public class EmployeesAmount : IEmployeeProperty<int>
     {
