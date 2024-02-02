@@ -1,5 +1,3 @@
-using Company.Enums;
-
 namespace Company.Employees
 {
     public class EmployeesInformation 

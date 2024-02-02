@@ -1,25 +1,95 @@
-using System.Collections;
-using System.Collections.Generic;
+using Company;
+using Company.Employees;
+using Company.Enums;
 using NUnit.Framework;
-using UnityEngine;
-using UnityEngine.TestTools;
+using System.Collections.Generic;
+
 
 public class CompanySalaryIncrementPercentageTest
 {
-    // A Test behaves as an ordinary method
     [Test]
-    public void CompanySalaryIncrementPercentageTestSimplePasses()
+    public void HRSectionSalaryIncrementPercentageTest()
     {
-        // Use the Assert class to test conditions
+        Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+
+        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(0, 5));
+        sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(0, 2));
+        sectionEmployees.Add(SeniorityLevels.Junior, new EmployeesInformation(0, 0.5f));
+
+        CompanySection companySection = new CompanySection();
+        companySection.SetSectionEmployeesDictionary(sectionEmployees);
+
+        Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
     }
 
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
-    [UnityTest]
-    public IEnumerator CompanySalaryIncrementPercentageTestWithEnumeratorPasses()
+    [Test]
+    public void EngineeringSectionSalaryIncrementPercentageTest()
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        yield return null;
+        Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+
+        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(0, 10));
+        sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(0, 7));
+        sectionEmployees.Add(SeniorityLevels.Junior, new EmployeesInformation(0, 5));
+
+        CompanySection companySection = new CompanySection();
+        companySection.SetSectionEmployeesDictionary(sectionEmployees);
+
+        Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
     }
+
+    [Test]
+    public void ArtistSectionSalaryIncrementPercentageTest()
+    {
+        Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+
+        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(0, 5));
+        sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(0, 2.5f));        
+
+        CompanySection companySection = new CompanySection();
+        companySection.SetSectionEmployeesDictionary(sectionEmployees);
+
+        Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
+    }
+
+    [Test]
+    public void DesignSectionSalaryIncrementPercentageTest()
+    {
+        Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+
+        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(0, 7));
+        sectionEmployees.Add(SeniorityLevels.Junior, new EmployeesInformation(0, 4));
+
+        CompanySection companySection = new CompanySection();
+        companySection.SetSectionEmployeesDictionary(sectionEmployees);
+
+        Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
+    }
+
+    [Test]
+    public void PMsSectionSalaryIncrementPercentageTest()
+    {
+        Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+
+        sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(0, 10));
+        sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(0, 5));
+
+        CompanySection companySection = new CompanySection();
+        companySection.SetSectionEmployeesDictionary(sectionEmployees);
+
+        Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
+    }
+
+    [Test]
+    public void CeoSectionSalaryIncrementPercentageTest()
+    {
+        Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+
+        sectionEmployees.Add(SeniorityLevels.None, new EmployeesInformation(0, 100));       
+
+        CompanySection companySection = new CompanySection();
+        companySection.SetSectionEmployeesDictionary(sectionEmployees);
+
+        Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
+    }
+
 }
