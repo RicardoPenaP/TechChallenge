@@ -18,9 +18,5 @@ namespace Company.Employees
             this.employeesAmount = employeesAmount;
         }
 
-        public void SetEmployeesAmount(int employeesAmount)
-        {
-            this.employeesAmount = employeesAmount;
-        }
     }
 }
