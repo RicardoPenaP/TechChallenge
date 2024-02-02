@@ -18,7 +18,7 @@ namespace Company.Employees
             salaryAmount = 0;
         }
 
-        public EmployeesInformation(int employeesAmount, float salaryIncrementPercentage, int salaryAmount)
+        public EmployeesInformation(int employeesAmount, float salaryIncrementPercentage, float salaryAmount)
         {
             this.employeesAmount = employeesAmount;
             this.salaryIncrementPercentage = salaryIncrementPercentage;
