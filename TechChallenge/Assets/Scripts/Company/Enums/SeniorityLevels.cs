@@ -4,18 +4,11 @@ using UnityEngine;
 
 namespace Company.Enums
 {
-    public class SeniorityLevels : MonoBehaviour
+    public enum SeniorityLevels
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+        None,
+        Junior,
+        SemiSenior,
+        Senior       
     }
 }
