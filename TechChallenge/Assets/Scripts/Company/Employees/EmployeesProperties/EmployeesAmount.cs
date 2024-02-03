@@ -4,18 +4,18 @@ namespace Company.Employees.EmployeesProperties
 {
     public class EmployeesAmount : EmployeesProperty
     {
-        private int amount;
+        private int value;
 
-        public EmployeesAmount(int amount)
+        public EmployeesAmount(int value)
         {
-            this.amount = amount;
+            this.value = value;
         }
 
         public override T ReadPropertyValue<T>()
         {
             if (typeof(T) == typeof(int))
             {                
-                return (T)(object)amount;
+                return (T)(object)value;
             }
             else
             {                
