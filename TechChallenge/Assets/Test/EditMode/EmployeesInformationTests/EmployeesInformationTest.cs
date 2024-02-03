@@ -11,7 +11,7 @@ namespace EditMode.EmployeesInformationTests
     public class EmployeesInformationTest
     {        
         [Test]
-        public void EmployeesInformationEmployeesAmountPropertyTest()
+        public void EmployeesAmountPropertyTest()
         {
             int testedAmount = 10;
             EmployeesInformation employeesInformation = new EmployeesInformation();
