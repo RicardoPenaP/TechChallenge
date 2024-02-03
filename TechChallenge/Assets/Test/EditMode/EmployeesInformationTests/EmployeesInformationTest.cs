@@ -25,6 +25,20 @@ namespace EditMode.EmployeesInformationTests
             Assert.AreEqual(targetAmount,testResult);
         }
 
-        
+        [Test]
+        public void SalaryIncrementPercentagePropertyTest()
+        {
+            float testedAmount = 10f;
+            EmployeesInformation employeesInformation = new EmployeesInformation();
+            SalaryIncrementPercentage salaryIncrementPercentage = new SalaryIncrementPercentage(testedAmount);
+
+            employeesInformation.AddEmployeesProperty(salaryIncrementPercentage);
+
+            float targetAmount = 10f;
+            float testResult = employeesInformation.GetEmployeesProperty<EmployeesAmount>().ReadPropertyValue<float>();
+
+            Assert.AreEqual(targetAmount, testResult);
+        }
+
     }
 }
