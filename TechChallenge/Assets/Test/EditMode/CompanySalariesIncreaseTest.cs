@@ -25,6 +25,7 @@ public class CompanySalariesIncreaseTest
         CompanySection companySection = new CompanySection();
         companySection.SetSectionEmployeesDictionary(sectionEmployees);
 
+
         float[] newSalaries = GetNewSalaries(companySection);
 
         Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
@@ -32,9 +33,18 @@ public class CompanySalariesIncreaseTest
 
     private float[] GetNewSalaries(CompanySection companySection)
     {
-        
-        
-        return new float[] { };
+        List<float> newSalariesList = new List<float>();
+        foreach (KeyValuePair<SeniorityLevels, EmployeesInformation> keyValuePair in companySection.GetSectionEmployeesDictionary())
+        {
+            newSalariesList.Add(keyValuePair.Value.SalaryAmount);
+        }
+        float[] newSalariesArray = new float[newSalariesList.Count];
+
+        for (int i = 0; i < newSalariesArray.Length; i++)
+        {
+            newSalariesArray[i] = newSalariesList[i];
+        }
+        return newSalariesArray;
     }
 
 
