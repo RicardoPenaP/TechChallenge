@@ -1,7 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace Company.Employees
 {
     public class EmployeesInformation
     {
+        private List<EmployeesProperty> employeesProperties;
         private int employeesAmount;
         private float salaryIncrementPercentage;
         private float salaryAmount;
@@ -13,6 +18,7 @@ namespace Company.Employees
 
         public EmployeesInformation()
         {
+            employeesProperties = new List<EmployeesProperty>();
             employeesAmount = 0;
             salaryIncrementPercentage = 0;
             salaryAmount = 0;
@@ -28,6 +34,23 @@ namespace Company.Employees
         public void SetSalaryAmount(float salaryAmount)
         {
             this.salaryAmount = salaryAmount;
+        }
+
+        public void AddEmployeesProperty<T>(T newEmployeesProperty) where T : EmployeesProperty
+        {
+            if (!employeesProperties.Any(existingProperty => existingProperty.GetType() == typeof(T) || existingProperty.GetType().IsSubclassOf(typeof(T))))
+            {
+                employeesProperties.Add(newEmployeesProperty);
+            }
+            else
+            {
+                throw new InvalidOperationException($"A property of type {typeof(T)} already exists");
+            }
+        }
+
+        public T GetEmployeesProperty<T>() where T : EmployeesProperty
+        {
+            return employeesProperties.OfType<T>().FirstOrDefault();
         }
     }
 }
