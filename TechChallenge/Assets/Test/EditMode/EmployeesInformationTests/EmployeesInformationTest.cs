@@ -35,7 +35,7 @@ namespace EditMode.EmployeesInformationTests
             employeesInformation.AddEmployeesProperty(salaryIncrementPercentage);
 
             float targetAmount = 10f;
-            float testResult = employeesInformation.GetEmployeesProperty<EmployeesAmount>().ReadPropertyValue<float>();
+            float testResult = employeesInformation.GetEmployeesProperty<SalaryIncrementPercentage>().ReadPropertyValue<float>();
 
             Assert.AreEqual(targetAmount, testResult);
         }
