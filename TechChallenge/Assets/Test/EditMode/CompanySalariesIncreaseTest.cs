@@ -24,7 +24,7 @@ public class CompanySalariesIncreaseTest
 
         CompanySection companySection = new CompanySection();
         companySection.SetSectionEmployeesDictionary(sectionEmployees);
-
+        companySection.IncreaseSectionEmployeesSalaries();
 
         float[] newSalaries = GetNewSalaries(companySection);
 
