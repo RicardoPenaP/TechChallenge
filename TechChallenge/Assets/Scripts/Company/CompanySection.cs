@@ -2,6 +2,7 @@ using Company.Employees;
 using Company.Enums;
 using System.Collections.Generic;
 using UnityEngine;
+using Tools.Calculators;
 
 namespace Company
 {
@@ -34,6 +35,15 @@ namespace Company
             {
                 Debug.Log("This company section doesn't have any salary amount for that seniority level");
                 return 0;
+            }
+        }
+
+        public void IncreaseSectionEmployeesSalaries()
+        {
+            foreach (KeyValuePair<SeniorityLevels, EmployeesInformation> keyValuePair in sectionEmployeesDictionary)
+            {
+                float newSalaryAmount = SalaryCalculator.CalculateSalaryIncrease(keyValuePair.Value.SalaryIncrementPercentage, keyValuePair.Value.SalaryAmount);
+                keyValuePair.Value.SetSalaryAmount(newSalaryAmount);
             }
         }
     }
