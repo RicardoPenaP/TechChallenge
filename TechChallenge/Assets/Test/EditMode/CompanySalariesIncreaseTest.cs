@@ -28,7 +28,7 @@ public class CompanySalariesIncreaseTest
 
         float[] newSalaries = GetNewSalaries(companySection);
 
-        Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
+        Assert.AreEqual(targetSalaries, newSalaries);
     }
 
     private float[] GetNewSalaries(CompanySection companySection)

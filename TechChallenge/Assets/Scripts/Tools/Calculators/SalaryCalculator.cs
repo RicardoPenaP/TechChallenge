@@ -4,10 +4,9 @@ namespace Tools.Calculators
 {
     public static class SalaryCalculator 
     {
-        public static int CalculateSalaryIncrease(float increasePercentage, float currentSalary)
-        {
-            float unroundedSalary = currentSalary * (1 + (increasePercentage / 100));
-            return Mathf.RoundToInt(unroundedSalary);
+        public static float CalculateSalaryIncrease(float increasePercentage, float currentSalary)
+        {            
+            return currentSalary * (1 + (increasePercentage / 100));
         }
     }
 }
