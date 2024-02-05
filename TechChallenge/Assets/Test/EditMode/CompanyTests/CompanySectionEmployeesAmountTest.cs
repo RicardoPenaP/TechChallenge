@@ -1,9 +1,5 @@
-using Company;
-using Company.Employees;
 using Company.Enums;
 using NUnit.Framework;
-using System.Collections.Generic;
-using Company.Employees.EmployeesProperties;
 
 namespace EditMode.CompanyTests
 {
