@@ -48,9 +48,31 @@ namespace Company.Employees
             }
         }
 
+        public void OverrideEmployeesProperty<T>(T overridedProperty) where T : EmployeesProperty
+        {
+            if (employeesProperties.Any(existingProperty => existingProperty.GetType() == typeof(T) || existingProperty.GetType().IsSubclassOf(typeof(T))))
+            {
+                DeleteProperty(overridedProperty);                
+            }            
+
+            AddEmployeesProperty(overridedProperty);
+        }
+
         public T GetEmployeesProperty<T>() where T : EmployeesProperty
         {
             return employeesProperties.OfType<T>().FirstOrDefault();
         }
+
+        private void DeleteProperty<T>(T propertyToDelete)
+        {
+            var propertyToRemove = employeesProperties.FirstOrDefault(existingProperty => existingProperty.GetType() == typeof(T) || existingProperty.GetType().IsSubclassOf(typeof(T)));
+
+            if (propertyToRemove != null)
+            {
+                employeesProperties.Remove(propertyToRemove);
+            }
+        }
+
+        
     }
 }
