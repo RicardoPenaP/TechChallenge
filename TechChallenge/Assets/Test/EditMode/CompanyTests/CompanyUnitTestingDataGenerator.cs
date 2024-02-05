@@ -96,28 +96,28 @@ namespace EditMode.CompanyTests
         {
             int arraysLenght = baseSalariesValues.Length;
 
-            Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+            List<EmployeesInformation> sectionEmployeesList = new List<EmployeesInformation>();
 
             for (int i = 0; i < arraysLenght; i++)
             {
                 EmployeesInformation employeesInformation = new EmployeesInformation();
+                employeesInformation.AddEmployeesProperty(new EmployeesSeniorityLevel(seniorityLevels[i]));
                 employeesInformation.AddEmployeesProperty(new BaseSalary(baseSalariesValues[i]));
                 employeesInformation.AddEmployeesProperty(new SalaryIncrementPercentage(incrementPercentages[i]));
                 employeesInformation.AddEmployeesProperty(new ActualSalary(baseSalariesValues[i]));
-                sectionEmployees.Add(seniorityLevels[i], employeesInformation);
+                sectionEmployeesList.Add(employeesInformation);               
             }
 
             CompanySection companySection = new CompanySection();
-            companySection.SetSectionEmployeesDictionary(sectionEmployees);
+            companySection.SetEmployeesInformationList(sectionEmployeesList);
             companySection.IncreaseSectionEmployeesSalaries();
-
-            Dictionary<SeniorityLevels, EmployeesInformation> targetEmployees = companySection.GetSectionEmployeesDictionary();
 
             float[] targetAmounts = new float[arraysLenght];
 
             for (int i = 0; i < arraysLenght; i++)
             {
-                targetAmounts[i] = targetEmployees[seniorityLevels[i]].GetEmployeesProperty<ActualSalary>().ReadPropertyValue<float>();
+                targetAmounts[i] = companySection.GetEmployeesInformationBySeniorityLevel(seniorityLevels[i]).
+                                   GetEmployeesProperty<ActualSalary>().ReadPropertyValue<float>();
             }
 
             return targetAmounts;
