@@ -7,13 +7,11 @@ using Tools.Calculators;
 namespace Company
 {
     public class CompanySection
-    {
-        private Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployeesDictionary;
+    {        
         private List<EmployeesInformation> employeesInformationList;
 
         public CompanySection()
         {
-            sectionEmployeesDictionary = new Dictionary<SeniorityLevels, EmployeesInformation>();
             employeesInformationList = new List<EmployeesInformation>();
         }
 
@@ -41,16 +39,6 @@ namespace Company
                 }
             }
             return null;
-        }
-
-        public void SetSectionEmployeesDictionary(Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployeesDictionary)
-        {
-            this.sectionEmployeesDictionary = sectionEmployeesDictionary;
-        }
-
-        public Dictionary<SeniorityLevels, EmployeesInformation> GetSectionEmployeesDictionary()
-        {
-            return sectionEmployeesDictionary;
         }
 
         public void IncreaseSectionEmployeesSalaries()
