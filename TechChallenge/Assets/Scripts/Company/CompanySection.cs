@@ -55,10 +55,10 @@ namespace Company
 
         public void IncreaseSectionEmployeesSalaries()
         {
-            foreach (KeyValuePair<SeniorityLevels, EmployeesInformation> keyValuePair in sectionEmployeesDictionary)
+            foreach (EmployeesInformation employeesInformation in employeesInformationList)
             {
                 float actuaSalaryValue = 0;
-                ActualSalary actualSalary = keyValuePair.Value.GetEmployeesProperty<ActualSalary>();
+                ActualSalary actualSalary = employeesInformation.GetEmployeesProperty<ActualSalary>();
 
                 if (actualSalary != null)
                 {
@@ -66,13 +66,12 @@ namespace Company
                 }
                 else
                 {
-                    actuaSalaryValue = keyValuePair.Value.GetEmployeesProperty<BaseSalary>().ReadPropertyValue<float>();
+                    actuaSalaryValue = employeesInformation.GetEmployeesProperty<BaseSalary>().ReadPropertyValue<float>();
                 }
 
-                float salaryAugmentPercentage = keyValuePair.Value.GetEmployeesProperty<SalaryIncrementPercentage>().ReadPropertyValue<float>();
-
+                float salaryAugmentPercentage = employeesInformation.GetEmployeesProperty<SalaryIncrementPercentage>().ReadPropertyValue<float>();
                 float newSalaryAmount = SalaryCalculator.CalculateSalaryIncrease(salaryAugmentPercentage, actuaSalaryValue);
-                keyValuePair.Value.OverrideEmployeesProperty<ActualSalary>(new ActualSalary(newSalaryAmount));                
+                employeesInformation.OverrideEmployeesProperty(new ActualSalary(newSalaryAmount));
             }
         }
     }
