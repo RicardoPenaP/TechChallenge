@@ -69,5 +69,36 @@ namespace EditMode.CompanyTests
 
             return targetAmounts;
         }
+
+        public static float[] GenerateCompanyBaseSalaryArrayForTesting(float[] startingValues, SeniorityLevels[] seniorityLevels)
+        {
+            float[] employeesAmounts = startingValues;
+            SeniorityLevels[] employeesSeniorityLevels = seniorityLevels;
+
+            int arraysLenght = employeesAmounts.Length;
+
+            Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+
+            for (int i = 0; i < arraysLenght; i++)
+            {
+                EmployeesInformation employeesInformation = new EmployeesInformation();
+                employeesInformation.AddEmployeesProperty(new SalaryIncrementPercentage(employeesAmounts[i]));
+                sectionEmployees.Add(employeesSeniorityLevels[i], employeesInformation);
+            }
+
+            CompanySection companySection = new CompanySection();
+            companySection.SetSectionEmployeesDictionary(sectionEmployees);
+
+            Dictionary<SeniorityLevels, EmployeesInformation> targetEmployees = companySection.GetSectionEmployeesDictionary();
+
+            float[] targetAmounts = new float[employeesAmounts.Length];
+
+            for (int i = 0; i < arraysLenght; i++)
+            {
+                targetAmounts[i] = targetEmployees[employeesSeniorityLevels[i]].GetEmployeesProperty<EmployeesAmount>().ReadPropertyValue<float>();
+            }
+
+            return targetAmounts;
+        }
     }
 }
