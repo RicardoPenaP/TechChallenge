@@ -11,86 +11,73 @@ namespace EditMode.CompanyTests
         [Test]
         public void HRSectionSalaryIncrementPercentageTest()
         {
-            Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+            float[] employeesAmounts = new float[] { 5f, 2f, 0.5f };
 
-            sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(0, 5, 0));
-            sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(0, 2, 0));
-            sectionEmployees.Add(SeniorityLevels.Junior, new EmployeesInformation(0, 0.5f, 0));
+            SeniorityLevels[] seniorityLevels = new SeniorityLevels[] { SeniorityLevels.Senior, SeniorityLevels.SemiSenior, SeniorityLevels.Junior };
 
-            CompanySection companySection = new CompanySection();
-            companySection.SetSectionEmployeesDictionary(sectionEmployees);
+            float[] targetAmounts = CompanyUnitTestingDataGenerator.GenerateCompanySalaryIncrementArrayForTesting(employeesAmounts, seniorityLevels);
 
-            Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
+            Assert.AreEqual(targetAmounts, employeesAmounts);
         }
 
         [Test]
         public void EngineeringSectionSalaryIncrementPercentageTest()
         {
-            Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+            float[] employeesAmounts = new float[] { 10f, 7f, 5f };
 
-            sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(0, 10, 0));
-            sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(0, 7, 0));
-            sectionEmployees.Add(SeniorityLevels.Junior, new EmployeesInformation(0, 5, 0));
+            SeniorityLevels[] seniorityLevels = new SeniorityLevels[] { SeniorityLevels.Senior, SeniorityLevels.SemiSenior, SeniorityLevels.Junior };
 
-            CompanySection companySection = new CompanySection();
-            companySection.SetSectionEmployeesDictionary(sectionEmployees);
+            float[] targetAmounts = CompanyUnitTestingDataGenerator.GenerateCompanySalaryIncrementArrayForTesting(employeesAmounts, seniorityLevels);
 
-            Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
+            Assert.AreEqual(targetAmounts, employeesAmounts);
         }
 
         [Test]
         public void ArtistSectionSalaryIncrementPercentageTest()
         {
-            Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+            float[] employeesAmounts = new float[] { 5f, 2.5f };
 
-            sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(0, 5, 0));
-            sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(0, 2.5f, 0));
+            SeniorityLevels[] seniorityLevels = new SeniorityLevels[] { SeniorityLevels.Senior, SeniorityLevels.SemiSenior };
 
-            CompanySection companySection = new CompanySection();
-            companySection.SetSectionEmployeesDictionary(sectionEmployees);
+            float[] targetAmounts = CompanyUnitTestingDataGenerator.GenerateCompanySalaryIncrementArrayForTesting(employeesAmounts, seniorityLevels);
 
-            Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
+            Assert.AreEqual(targetAmounts, employeesAmounts);
         }
 
         [Test]
         public void DesignSectionSalaryIncrementPercentageTest()
         {
-            Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+            float[] employeesAmounts = new float[] { 7f, 4f };
 
-            sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(0, 7, 0));
-            sectionEmployees.Add(SeniorityLevels.Junior, new EmployeesInformation(0, 4, 0));
+            SeniorityLevels[] seniorityLevels = new SeniorityLevels[] { SeniorityLevels.Senior, SeniorityLevels.Junior };
 
-            CompanySection companySection = new CompanySection();
-            companySection.SetSectionEmployeesDictionary(sectionEmployees);
+            float[] targetAmounts = CompanyUnitTestingDataGenerator.GenerateCompanySalaryIncrementArrayForTesting(employeesAmounts, seniorityLevels);
 
-            Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
+            Assert.AreEqual(targetAmounts, employeesAmounts);
         }
 
         [Test]
         public void PMsSectionSalaryIncrementPercentageTest()
         {
-            Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+            float[] employeesAmounts = new float[] { 10f, 5f };
 
-            sectionEmployees.Add(SeniorityLevels.Senior, new EmployeesInformation(0, 10, 0));
-            sectionEmployees.Add(SeniorityLevels.SemiSenior, new EmployeesInformation(0, 5, 0));
+            SeniorityLevels[] seniorityLevels = new SeniorityLevels[] { SeniorityLevels.Senior, SeniorityLevels.SemiSenior };
 
-            CompanySection companySection = new CompanySection();
-            companySection.SetSectionEmployeesDictionary(sectionEmployees);
+            float[] targetAmounts = CompanyUnitTestingDataGenerator.GenerateCompanySalaryIncrementArrayForTesting(employeesAmounts, seniorityLevels);
 
-            Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
+            Assert.AreEqual(targetAmounts, employeesAmounts);
         }
 
         [Test]
         public void CeoSectionSalaryIncrementPercentageTest()
         {
-            Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+            float[] employeesAmounts = new float[] { 100f };
 
-            sectionEmployees.Add(SeniorityLevels.None, new EmployeesInformation(0, 100, 0));
+            SeniorityLevels[] seniorityLevels = new SeniorityLevels[] { SeniorityLevels.None };
 
-            CompanySection companySection = new CompanySection();
-            companySection.SetSectionEmployeesDictionary(sectionEmployees);
+            float[] targetAmounts = CompanyUnitTestingDataGenerator.GenerateCompanySalaryIncrementArrayForTesting(employeesAmounts, seniorityLevels);
 
-            Assert.AreEqual(sectionEmployees, companySection.GetSectionEmployeesDictionary());
+            Assert.AreEqual(targetAmounts, employeesAmounts);
         }
 
     }
