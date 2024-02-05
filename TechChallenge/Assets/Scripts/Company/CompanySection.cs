@@ -9,10 +9,28 @@ namespace Company
     public class CompanySection
     {
         private Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployeesDictionary;
+        private List<EmployeesInformation> employeesInformationList;
 
         public CompanySection()
         {
             sectionEmployeesDictionary = new Dictionary<SeniorityLevels, EmployeesInformation>();
+            employeesInformationList = new List<EmployeesInformation>();
+        }
+
+        public void SetEmployeesInformationList(List<EmployeesInformation> employeesInformationList)
+        {
+            this.employeesInformationList = employeesInformationList;
+        }
+
+        public List<EmployeesInformation> GetEmployeesInformationList()
+        {
+            return employeesInformationList;
+        }
+
+        public EmployeesInformation GetEmployeesInformationBySeniorityLevel(SeniorityLevels seniorityLevel)
+        {
+            
+            return null;
         }
 
         public void SetSectionEmployeesDictionary(Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployeesDictionary)
