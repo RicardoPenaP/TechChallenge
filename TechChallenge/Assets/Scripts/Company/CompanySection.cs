@@ -29,7 +29,17 @@ namespace Company
 
         public EmployeesInformation GetEmployeesInformationBySeniorityLevel(SeniorityLevels seniorityLevel)
         {
-            
+            foreach (EmployeesInformation employeesInformation in employeesInformationList)
+            {
+                EmployeesSeniorityLevel employeesSeniorityLevel = employeesInformation.GetEmployeesProperty<EmployeesSeniorityLevel>();
+                if (employeesSeniorityLevel != null)
+                {
+                    if (employeesSeniorityLevel.ReadPropertyValue<SeniorityLevels>() == seniorityLevel)
+                    {
+                        return employeesInformation;
+                    }
+                }
+            }
             return null;
         }
 
