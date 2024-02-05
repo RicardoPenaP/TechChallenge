@@ -1,8 +1,5 @@
-using Company;
-using Company.Employees;
 using Company.Enums;
 using NUnit.Framework;
-using System.Collections.Generic;
 
 namespace EditMode.CompanyTests
 {
@@ -95,9 +92,6 @@ namespace EditMode.CompanyTests
 
             Assert.AreEqual(targetSalaries, newSalaries);
         }
-
-
-
 
     }
 }

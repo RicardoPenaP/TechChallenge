@@ -1,9 +1,8 @@
 using Company.Employees;
+using Company.Employees.EmployeesProperties;
 using Company.Enums;
 using System.Collections.Generic;
-using UnityEngine;
 using Tools.Calculators;
-using Company.Employees.EmployeesProperties;
 
 namespace Company
 {
