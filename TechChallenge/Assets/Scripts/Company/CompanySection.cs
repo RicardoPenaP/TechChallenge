@@ -3,6 +3,7 @@ using Company.Enums;
 using System.Collections.Generic;
 using UnityEngine;
 using Tools.Calculators;
+using Company.Employees.EmployeesProperties;
 
 namespace Company
 {
@@ -23,14 +24,28 @@ namespace Company
         public Dictionary<SeniorityLevels, EmployeesInformation> GetSectionEmployeesDictionary()
         {
             return sectionEmployeesDictionary;
-        }       
+        }
 
         public void IncreaseSectionEmployeesSalaries()
         {
             foreach (KeyValuePair<SeniorityLevels, EmployeesInformation> keyValuePair in sectionEmployeesDictionary)
             {
-                float newSalaryAmount = SalaryCalculator.CalculateSalaryIncrease(keyValuePair.Value.SalaryIncrementPercentage, keyValuePair.Value.SalaryAmount);
-                keyValuePair.Value.SetSalaryAmount(newSalaryAmount);
+                float actuaSalaryValue = 0;
+                ActualSalary actualSalary = keyValuePair.Value.GetEmployeesProperty<ActualSalary>();
+
+                if (actualSalary != null)
+                {
+                    actuaSalaryValue = actualSalary.ReadPropertyValue<float>();
+                }
+                else
+                {
+                    actuaSalaryValue = keyValuePair.Value.GetEmployeesProperty<BaseSalary>().ReadPropertyValue<float>();
+                }
+
+                float salaryAugmentPercentage = keyValuePair.Value.GetEmployeesProperty<SalaryIncrementPercentage>().ReadPropertyValue<float>();
+
+                float newSalaryAmount = SalaryCalculator.CalculateSalaryIncrease(salaryAugmentPercentage, actuaSalaryValue);
+                keyValuePair.Value.OverrideEmployeesProperty<ActualSalary>(new ActualSalary(newSalaryAmount));                
             }
         }
     }

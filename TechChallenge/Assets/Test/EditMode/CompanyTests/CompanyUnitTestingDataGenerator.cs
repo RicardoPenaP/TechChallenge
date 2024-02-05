@@ -103,11 +103,13 @@ namespace EditMode.CompanyTests
                 EmployeesInformation employeesInformation = new EmployeesInformation();
                 employeesInformation.AddEmployeesProperty(new BaseSalary(baseSalariesValues[i]));
                 employeesInformation.AddEmployeesProperty(new SalaryIncrementPercentage(incrementPercentages[i]));
+                employeesInformation.AddEmployeesProperty(new ActualSalary(baseSalariesValues[i]));
                 sectionEmployees.Add(seniorityLevels[i], employeesInformation);
             }
 
             CompanySection companySection = new CompanySection();
             companySection.SetSectionEmployeesDictionary(sectionEmployees);
+            companySection.IncreaseSectionEmployeesSalaries();
 
             Dictionary<SeniorityLevels, EmployeesInformation> targetEmployees = companySection.GetSectionEmployeesDictionary();
 
@@ -115,7 +117,7 @@ namespace EditMode.CompanyTests
 
             for (int i = 0; i < arraysLenght; i++)
             {
-                targetAmounts[i] = targetEmployees[seniorityLevels[i]].GetEmployeesProperty<BaseSalary>().ReadPropertyValue<float>();
+                targetAmounts[i] = targetEmployees[seniorityLevels[i]].GetEmployeesProperty<ActualSalary>().ReadPropertyValue<float>();
             }
 
             return targetAmounts;
