@@ -58,7 +58,7 @@ namespace EditMode.CompanyTests
 
             for (int i = 0; i < arraysLenght; i++)
             {
-                targetAmounts[i] = targetEmployees[seniorityLevels[i]].GetEmployeesProperty<EmployeesAmount>().ReadPropertyValue<float>();
+                targetAmounts[i] = targetEmployees[seniorityLevels[i]].GetEmployeesProperty<SalaryIncrementPercentage>().ReadPropertyValue<float>();
             }
 
             return targetAmounts;
@@ -73,7 +73,7 @@ namespace EditMode.CompanyTests
             for (int i = 0; i < arraysLenght; i++)
             {
                 EmployeesInformation employeesInformation = new EmployeesInformation();
-                employeesInformation.AddEmployeesProperty(new SalaryIncrementPercentage(startingValues[i]));
+                employeesInformation.AddEmployeesProperty(new BaseSalary(startingValues[i]));
                 sectionEmployees.Add(seniorityLevels[i], employeesInformation);
             }
 
@@ -86,7 +86,7 @@ namespace EditMode.CompanyTests
 
             for (int i = 0; i < arraysLenght; i++)
             {
-                targetAmounts[i] = targetEmployees[seniorityLevels[i]].GetEmployeesProperty<EmployeesAmount>().ReadPropertyValue<float>();
+                targetAmounts[i] = targetEmployees[seniorityLevels[i]].GetEmployeesProperty<BaseSalary>().ReadPropertyValue<float>();
             }
 
             return targetAmounts;
