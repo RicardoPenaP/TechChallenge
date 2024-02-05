@@ -65,7 +65,7 @@ namespace EditMode.CompanyTests
         }
 
         public static float[] GenerateCompanyBaseSalaryArrayForTesting(float[] startingValues, SeniorityLevels[] seniorityLevels)
-        {   
+        {
             int arraysLenght = startingValues.Length;
 
             Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
@@ -92,7 +92,7 @@ namespace EditMode.CompanyTests
             return targetAmounts;
         }
 
-        public static float[] GenerateCompanyIncrementedSalaryArrayForTesting(float[] baseSalariesValues,float[] incrementPercentages, SeniorityLevels[] seniorityLevels)
+        public static float[] GenerateCompanyIncrementedSalaryArrayForTesting(float[] baseSalariesValues, float[] incrementPercentages, SeniorityLevels[] seniorityLevels)
         {
             int arraysLenght = baseSalariesValues.Length;
 

@@ -2,11 +2,11 @@ using System;
 
 namespace Company.Employees.EmployeesProperties
 {
-    public class SalaryIncrementPercentage : EmployeesProperty
+    public class ActualSalary : EmployeesProperty
     {
         private float value;
 
-        public SalaryIncrementPercentage(float value)
+        public ActualSalary(float value)
         {
             this.value = value;
         }

@@ -19,7 +19,7 @@ namespace Company.Employees.EmployeesProperties
             }
             else
             {
-                throw new InvalidOperationException($"Cannot convert value from int to {typeof(T)}");
+                throw new InvalidOperationException($"Cannot convert value from float to {typeof(T)}");
             }
         }
     }
