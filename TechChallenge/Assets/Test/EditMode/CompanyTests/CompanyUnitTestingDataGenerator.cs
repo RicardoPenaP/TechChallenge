@@ -41,17 +41,17 @@ namespace EditMode.CompanyTests
 
         public static float[] GenerateCompanySalaryIncrementArrayForTesting(float[] startingValues, SeniorityLevels[] seniorityLevels)
         {
-            float[] employeesAmounts = startingValues;
+            float[] salaryIncrementPercentages = startingValues;
             SeniorityLevels[] employeesSeniorityLevels = seniorityLevels;
 
-            int arraysLenght = employeesAmounts.Length;
+            int arraysLenght = salaryIncrementPercentages.Length;
 
             Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
 
             for (int i = 0; i < arraysLenght; i++)
             {
                 EmployeesInformation employeesInformation = new EmployeesInformation();
-                employeesInformation.AddEmployeesProperty(new SalaryIncrementPercentage(employeesAmounts[i]));
+                employeesInformation.AddEmployeesProperty(new SalaryIncrementPercentage(salaryIncrementPercentages[i]));
                 sectionEmployees.Add(employeesSeniorityLevels[i], employeesInformation);
             }
 
@@ -60,7 +60,7 @@ namespace EditMode.CompanyTests
 
             Dictionary<SeniorityLevels, EmployeesInformation> targetEmployees = companySection.GetSectionEmployeesDictionary();
 
-            float[] targetAmounts = new float[employeesAmounts.Length];
+            float[] targetAmounts = new float[salaryIncrementPercentages.Length];
 
             for (int i = 0; i < arraysLenght; i++)
             {
@@ -72,17 +72,17 @@ namespace EditMode.CompanyTests
 
         public static float[] GenerateCompanyBaseSalaryArrayForTesting(float[] startingValues, SeniorityLevels[] seniorityLevels)
         {
-            float[] employeesAmounts = startingValues;
+            float[] baseSalaries = startingValues;
             SeniorityLevels[] employeesSeniorityLevels = seniorityLevels;
 
-            int arraysLenght = employeesAmounts.Length;
+            int arraysLenght = baseSalaries.Length;
 
             Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
 
             for (int i = 0; i < arraysLenght; i++)
             {
                 EmployeesInformation employeesInformation = new EmployeesInformation();
-                employeesInformation.AddEmployeesProperty(new SalaryIncrementPercentage(employeesAmounts[i]));
+                employeesInformation.AddEmployeesProperty(new SalaryIncrementPercentage(baseSalaries[i]));
                 sectionEmployees.Add(employeesSeniorityLevels[i], employeesInformation);
             }
 
@@ -91,11 +91,40 @@ namespace EditMode.CompanyTests
 
             Dictionary<SeniorityLevels, EmployeesInformation> targetEmployees = companySection.GetSectionEmployeesDictionary();
 
-            float[] targetAmounts = new float[employeesAmounts.Length];
+            float[] targetAmounts = new float[baseSalaries.Length];
 
             for (int i = 0; i < arraysLenght; i++)
             {
                 targetAmounts[i] = targetEmployees[employeesSeniorityLevels[i]].GetEmployeesProperty<EmployeesAmount>().ReadPropertyValue<float>();
+            }
+
+            return targetAmounts;
+        }
+
+        public static float[] GenerateCompanyIncrementedSalaryArrayForTesting(float[] baseSalariesValues,float[] incrementPercentages, SeniorityLevels[] seniorityLevels)
+        {
+            int arraysLenght = baseSalariesValues.Length;
+
+            Dictionary<SeniorityLevels, EmployeesInformation> sectionEmployees = new Dictionary<SeniorityLevels, EmployeesInformation>();
+
+            for (int i = 0; i < arraysLenght; i++)
+            {
+                EmployeesInformation employeesInformation = new EmployeesInformation();
+                employeesInformation.AddEmployeesProperty(new BaseSalary(baseSalariesValues[i]));
+                employeesInformation.AddEmployeesProperty(new SalaryIncrementPercentage(incrementPercentages[i]));
+                sectionEmployees.Add(seniorityLevels[i], employeesInformation);
+            }
+
+            CompanySection companySection = new CompanySection();
+            companySection.SetSectionEmployeesDictionary(sectionEmployees);
+
+            Dictionary<SeniorityLevels, EmployeesInformation> targetEmployees = companySection.GetSectionEmployeesDictionary();
+
+            float[] targetAmounts = new float[arraysLenght];
+
+            for (int i = 0; i < arraysLenght; i++)
+            {
+                targetAmounts[i] = targetEmployees[seniorityLevels[i]].GetEmployeesProperty<BaseSalary>().ReadPropertyValue<float>();
             }
 
             return targetAmounts;
