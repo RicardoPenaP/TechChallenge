@@ -14,6 +14,12 @@ namespace Company.CompanyMVC.CompanyView
         [Header("Runtime references")]
         [SerializeField] private Transform sectionsInformationLayoutGroupTransform;
 
+        private List<SectionInformationPropertiesView> activeSectionInformationPropertiesViewList;
+
+        private void Awake()
+        {
+            activeSectionInformationPropertiesViewList = new List<SectionInformationPropertiesView>();
+        }
 
     }
 }
