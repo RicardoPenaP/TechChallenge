@@ -18,13 +18,12 @@ namespace CompanyMVC.Factories
             List<CompanySection> companySections = new List<CompanySection>();
 
             for (int i = 0; i < techChallengeCompanyModelData.CompanySections.Length; i++)
-            {
-                string sectionName = GetSectionName(i);                
+            {                            
                 companySections[i] = new CompanySection();
+                companySections[i].SetSectionName(techChallengeCompanyModelData.CompanySections[i].CompanySectionName);
+                List<EmployeesInformation> employeesInformationList = GetEmployeesInformationList();
 
-
-                List<EmployeesProperty> employeesPropertiesList = GetSectionEmployeesPropertiesList(techChallengeCompanyModelData.CompanySections[i]);
-
+                companySections[i].SetEmployeesInformationList(employeesInformationList);
 
                
             }
@@ -32,16 +31,36 @@ namespace CompanyMVC.Factories
             return new CompanyInformation(techChallengeCompanyModelData.CompanyName, companySections);
         }
 
-        private string GetSectionName(int index)
+        private List<EmployeesInformation> GetEmployeesInformationList(CompanySectionData companySectionData)
         {
-            return techChallengeCompanyModelData.CompanySections[index].CompanySectionName;
+            List<EmployeesInformation> employeesInformationList = new List<EmployeesInformation>();
+
+            for (int i = 0; i < companySectionData.SeniorityLevels.Length; i++)
+            {
+                List<EmployeesProperty> employeesProperties = GetSectionEmployeesPropertiesList(
+                    companySectionData.SeniorityLevels[i],companySectionData.EmployeesAmount[i],
+                    companySectionData.SalaryIncrementPercentage[i], companySectionData.BaseSalary[i]);
+
+                EmployeesInformation newEmployeesInformation = new EmployeesInformation();  
+                
+            }
+            
+            
+
+            return new List<EmployeesInformation>(); 
         }
 
-        private List<EmployeesProperty> GetSectionEmployeesPropertiesList(CompanySectionData companySectionData)
-        {
-            List<EmployeesProperty> employeesPropertiesList = new List<EmployeesProperty>();
 
-            return employeesPropertiesList;
+        private List<EmployeesProperty> GetSectionEmployeesPropertiesList(SeniorityLevels seniorityLevel, int employeesAmount, float salaryIncrementPercentage, float baseSalary)
+        {
+            List<EmployeesProperty> employeesProperties = new List<EmployeesProperty>();
+            employeesProperties.Add(new EmployeesSeniorityLevel(seniorityLevel));
+            employeesProperties.Add(new EmployeesAmount(employeesAmount));
+            employeesProperties.Add(new SalaryIncrementPercentage(salaryIncrementPercentage));
+            employeesProperties.Add(new BaseSalary(baseSalary));
+            employeesProperties.Add(new ActualSalary(baseSalary));
+
+            return employeesProperties;
         }
     }
 }
