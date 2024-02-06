@@ -1,11 +1,9 @@
-using System.Collections;
+using Company;
+using CompanyMVC.CompanyModel.ModelData;
 using System.Collections.Generic;
 using UnityEngine;
-using Company.CompanyMVC.CompanyModel.ModelData;
-using Company.Employees;
-using Company;
 
-namespace Company.CompanyMVC.Factories
+namespace CompanyMVC.Factories
 {
     public class CompanyModelFactory : MonoBehaviour
     {

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Company.CompanyMVC.CompanyModel.ModelData
+namespace CompanyMVC.CompanyModel.ModelData
 {
     [CreateAssetMenu(fileName = "NewCompanyModelData", menuName = "Company Model Data")]
     public class CompanyModelData : ScriptableObject

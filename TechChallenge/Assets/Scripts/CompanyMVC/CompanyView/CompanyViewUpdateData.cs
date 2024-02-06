@@ -1,4 +1,4 @@
-namespace Company.CompanyMVC.CompanyView
+namespace CompanyMVC.CompanyView
 {
     public class CompanyViewUpdateData 
     {
