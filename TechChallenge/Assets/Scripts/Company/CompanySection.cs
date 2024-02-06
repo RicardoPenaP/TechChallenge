@@ -7,8 +7,9 @@ using Tools.Calculators;
 namespace Company
 {
     public class CompanySection
-    {        
-        private List<EmployeesInformation> employeesInformationList;
+    {
+        private string sectionName;
+        private List<EmployeesInformation> employeesInformationList;        
 
         public CompanySection()
         {
@@ -62,5 +63,16 @@ namespace Company
                 employeesInformation.OverrideEmployeesProperty(new ActualSalary(newSalaryAmount));
             }
         }
+
+        public void SetSectionName(string sectionName)
+        {
+            this.sectionName = sectionName;
+        }
+
+        public string GetSectionName()
+        {
+            return sectionName;
+        }
+        
     }
 }
