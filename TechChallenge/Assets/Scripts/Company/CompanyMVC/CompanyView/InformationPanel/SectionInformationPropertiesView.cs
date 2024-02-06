@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using Company.CompanyMVC.CompanyView;
 
 
 namespace Company.CompanyMVC.CompanyView.InformationPanel
@@ -24,14 +25,14 @@ namespace Company.CompanyMVC.CompanyView.InformationPanel
             actualSalaryText.text = " ";
         }
 
-        public void SetAllPropertiesText(string sectionNameTex, string seniorityLevelText, string employeesAmountText, string salaryIncrementPercentageText, string baseSalaryText, string actualSalaryText)
+        public void SetAllPropertiesText(CompanyViewUpdateData companyViewUpdateData)
         {
-            this.sectionNameText.text = sectionNameTex;
-            this.seniorityLevelText.text = seniorityLevelText;
-            this.employeesAmountText.text = employeesAmountText;
-            this.salaryIncrementPercentageText.text = salaryIncrementPercentageText;
-            this.baseSalaryText.text = baseSalaryText;
-            this.actualSalaryText.text = actualSalaryText;
+            sectionNameText.text = companyViewUpdateData.SectionName;
+            seniorityLevelText.text = companyViewUpdateData.SeniorityLevel;
+            employeesAmountText.text = companyViewUpdateData.EmployeesAmount;
+            salaryIncrementPercentageText.text = companyViewUpdateData.SectionName;
+            baseSalaryText.text = companyViewUpdateData.SectionName;
+            actualSalaryText.text = companyViewUpdateData.SectionName;
         }
 
     }
