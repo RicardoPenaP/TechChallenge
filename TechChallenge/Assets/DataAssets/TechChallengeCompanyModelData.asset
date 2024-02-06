@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96e797d66d2bf549acbbc0266bc9d0e, type: 3}
   m_Name: TechChallengeCompanyModelData
   m_EditorClassIdentifier: 
+  companyName: Tech Challenge Company
   companySections:
   - {fileID: 11400000, guid: 66acc0b155980e844b1785c834ef517d, type: 2}
   - {fileID: 11400000, guid: c01c1cc3e3c00cd4394c233aada689f8, type: 2}
