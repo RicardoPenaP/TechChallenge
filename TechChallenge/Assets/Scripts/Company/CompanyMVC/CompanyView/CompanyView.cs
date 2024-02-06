@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Company.CompanyMVC.CompanyView.InformationPanel;
-using Company.CompanyMVC.Tools;
+using Company.CompanyMVC.Factories;
 using UnityEngine.UI;
 using System;
 
