@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Company.CompanyMVC.CompanyView.InformationPanel;
+using Company.CompanyMVC.Tools;
 
 namespace Company.CompanyMVC.CompanyView
 {
@@ -9,6 +10,7 @@ namespace Company.CompanyMVC.CompanyView
     {
         [Header("Company View")]
         [Header("Runtime references")]
+        [SerializeField] private CompanyViewFactory companyViewFactory;
         [SerializeField] private Transform sectionsInformationLayoutGroupTransform;
 
         private List<SectionInformationPropertiesView> activeSectionInformationPropertiesViewList;
@@ -20,7 +22,7 @@ namespace Company.CompanyMVC.CompanyView
 
         public void AddCompanySectionInformation(CompanyViewUpdateData companyViewUpdateData)
         {
-
+            activeSectionInformationPropertiesViewList.Add(companyViewFactory.CreateSectionInformationPropertiesView(sectionsInformationLayoutGroupTransform, companyViewUpdateData));
         }
 
     }
