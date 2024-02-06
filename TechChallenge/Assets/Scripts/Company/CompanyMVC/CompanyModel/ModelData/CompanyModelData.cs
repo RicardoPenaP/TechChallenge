@@ -8,6 +8,8 @@ namespace Company.CompanyMVC.CompanyModel.ModelData
     public class CompanyModelData : ScriptableObject
     {
         [Header("Company Model Data")]
-        [SerializeField] private float value;
+        [SerializeField] private CompanySectionData[] companySections;
+
+        public CompanySectionData[] CompanySections => companySections;
     }
 }
