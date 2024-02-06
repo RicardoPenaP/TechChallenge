@@ -35,5 +35,9 @@ namespace Company.CompanyMVC.CompanyView.InformationPanel
             actualSalaryText.text = companyViewUpdateData.SectionName;
         }
 
+        public void SetActualSalaryText(string text)
+        {
+            actualSalaryText.text = text;
+        }
     }
 }

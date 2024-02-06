@@ -21,5 +21,7 @@ namespace Company.CompanyMVC.CompanyView
             activeSectionInformationPropertiesViewList = new List<SectionInformationPropertiesView>();
         }
 
+
+
     }
 }
