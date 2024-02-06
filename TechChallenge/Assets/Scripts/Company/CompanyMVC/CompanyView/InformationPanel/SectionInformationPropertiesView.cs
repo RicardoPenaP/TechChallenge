@@ -2,20 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Company
+
+namespace Company.CompanyMVC.CompanyView.InformationPanel
 {
     public class SectionInformationPropertiesView : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+        //[Header("Section Information Properties View")]
+        //[SerializeField] private
     }
 }
