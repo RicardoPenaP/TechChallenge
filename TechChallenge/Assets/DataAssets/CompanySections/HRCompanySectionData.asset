@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43d130148244554a8e3b16d3ad318ef, type: 3}
   m_Name: HRCompanySectionData
   m_EditorClassIdentifier: 
-  companySectionName: 
-  seniorityLevels: 
-  employeesAmount: 
-  salaryIncrementPercentage: []
-  baseSalary: []
+  companySectionName: Human Resources
+  seniorityLevels: 030000000200000001000000
+  employeesAmount: 05000000020000000d000000
+  salaryIncrementPercentage:
+  - 5
+  - 2
+  - 0.5
+  baseSalary:
+  - 1500
+  - 1000
+  - 500
