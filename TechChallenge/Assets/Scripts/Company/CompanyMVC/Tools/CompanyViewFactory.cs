@@ -1,21 +1,22 @@
+using Company.CompanyMVC.CompanyView;
+using Company.CompanyMVC.CompanyView.InformationPanel;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Company
+namespace Company.CompanyMVC.Tools
 {
     public class CompanyViewFactory : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        [Header("Company View Factory")]
+        [Header("Prefabs references")]
+        [SerializeField] private SectionInformationPropertiesView sectionInformationPropertiesViewPrefab;
 
-        // Update is called once per frame
-        void Update()
+        public SectionInformationPropertiesView CreateSectionInformationPropertiesView(Transform parent, CompanyViewUpdateData sectionData)
         {
-        
+            SectionInformationPropertiesView newSectionInformationPropertiesView = Instantiate(sectionInformationPropertiesViewPrefab, parent);
+            newSectionInformationPropertiesView.SetAllPropertiesText(sectionData);
+            return newSectionInformationPropertiesView;
         }
     }
 }
