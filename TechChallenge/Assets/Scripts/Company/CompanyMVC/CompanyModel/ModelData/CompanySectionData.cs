@@ -6,7 +6,7 @@ using Company.Enums;
 
 namespace Company.CompanyMVC.CompanyModel.ModelData
 {
-    [Serializable]
+    [CreateAssetMenu(fileName ="NewCompanySectionData", menuName = "Company Section Data")]
     public class CompanySectionData : ScriptableObject
     {
         [Header("Company Section Data")]
