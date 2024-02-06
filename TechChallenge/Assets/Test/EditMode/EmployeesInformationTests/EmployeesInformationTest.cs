@@ -5,11 +5,27 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using Company.Employees.EmployeesProperties;
 using Company.Employees;
+using Company.Enums;
 
 namespace EditMode.EmployeesInformationTests
 {
     public class EmployeesInformationTest
-    {        
+    {
+        [Test]
+        public void SeniorityLevelPropertyTest()
+        {
+            SeniorityLevels testedAmount = SeniorityLevels.Senior;
+            EmployeesInformation employeesInformation = new EmployeesInformation();
+            EmployeesSeniorityLevel seniorityLevel = new EmployeesSeniorityLevel(testedAmount);
+
+            employeesInformation.AddEmployeesProperty(seniorityLevel);
+
+            SeniorityLevels targetAmount = SeniorityLevels.Senior;
+            SeniorityLevels testResult = employeesInformation.GetEmployeesProperty<EmployeesSeniorityLevel>().ReadPropertyValue<SeniorityLevels>();
+
+            Assert.AreEqual(targetAmount, testResult);
+        }
+
         [Test]
         public void EmployeesAmountPropertyTest()
         {
@@ -51,6 +67,21 @@ namespace EditMode.EmployeesInformationTests
 
             float targetAmount = 1000f;
             float testResult = employeesInformation.GetEmployeesProperty<BaseSalary>().ReadPropertyValue<float>();
+
+            Assert.AreEqual(targetAmount, testResult);
+        }
+
+        [Test]
+        public void EmployeesSectionNamePropertyTest()
+        {
+            string testedAmount = "Name";
+            EmployeesInformation employeesInformation = new EmployeesInformation();
+            EmployeesSectionName employeesSectionName = new EmployeesSectionName(testedAmount);
+
+            employeesInformation.AddEmployeesProperty(employeesSectionName);
+
+            string targetAmount = "Name";
+            string testResult = employeesInformation.GetEmployeesProperty<EmployeesSectionName>().ReadPropertyValue<string>();
 
             Assert.AreEqual(targetAmount, testResult);
         }
