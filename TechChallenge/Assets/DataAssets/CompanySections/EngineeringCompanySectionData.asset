@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43d130148244554a8e3b16d3ad318ef, type: 3}
   m_Name: EngineeringCompanySectionData
   m_EditorClassIdentifier: 
-  companySectionName: 
-  seniorityLevels: 
-  employeesAmount: 
-  salaryIncrementPercentage: []
-  baseSalary: []
+  companySectionName: Engineering
+  seniorityLevels: 030000000200000001000000
+  employeesAmount: 320000004400000020000000
+  salaryIncrementPercentage:
+  - 10
+  - 7
+  - 5
+  baseSalary:
+  - 5000
+  - 3000
+  - 1500
