@@ -6,34 +6,16 @@ namespace Company.Employees
 {
     public class EmployeesInformation
     {
-        private List<EmployeesProperty> employeesProperties;
-        private int employeesAmount;
-        private float salaryIncrementPercentage;
-        private float salaryAmount;
-
-        public int EmployeesAmount { get { return employeesAmount; } }
-        public float SalaryIncrementPercentage { get { return salaryIncrementPercentage; } }
-
-        public float SalaryAmount { get { return salaryAmount; } }
+        private List<EmployeesProperty> employeesProperties;       
 
         public EmployeesInformation()
         {
-            employeesProperties = new List<EmployeesProperty>();
-            employeesAmount = 0;
-            salaryIncrementPercentage = 0;
-            salaryAmount = 0;
+            employeesProperties = new List<EmployeesProperty>();            
         }
 
-        public EmployeesInformation(int employeesAmount, float salaryIncrementPercentage, float salaryAmount)
+        public void SetEmployeesPropeties(List<EmployeesProperty> employeesProperties)
         {
-            this.employeesAmount = employeesAmount;
-            this.salaryIncrementPercentage = salaryIncrementPercentage;
-            this.salaryAmount = salaryAmount;
-        }
-
-        public void SetSalaryAmount(float salaryAmount)
-        {
-            this.salaryAmount = salaryAmount;
+            this.employeesProperties = employeesProperties;
         }
 
         public void AddEmployeesProperty<T>(T newEmployeesProperty) where T : EmployeesProperty
