@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43d130148244554a8e3b16d3ad318ef, type: 3}
   m_Name: ArtistCompanySectionData
   m_EditorClassIdentifier: 
-  companySectionName: 
-  seniorityLevels: 
-  employeesAmount: 
-  salaryIncrementPercentage: []
-  baseSalary: []
+  companySectionName: Artist
+  seniorityLevels: 0300000002000000
+  employeesAmount: 0500000014000000
+  salaryIncrementPercentage:
+  - 5
+  - 2.5
+  baseSalary:
+  - 2000
+  - 1200
