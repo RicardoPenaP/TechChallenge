@@ -21,11 +21,9 @@ namespace CompanyMVC.Factories
             {                            
                 companySections[i] = new CompanySection();
                 companySections[i].SetSectionName(techChallengeCompanyModelData.CompanySections[i].CompanySectionName);
-                List<EmployeesInformation> employeesInformationList = GetEmployeesInformationList();
+                List<EmployeesInformation> employeesInformationList = GetEmployeesInformationList(techChallengeCompanyModelData.CompanySections[i]);
 
                 companySections[i].SetEmployeesInformationList(employeesInformationList);
-
-               
             }
 
             return new CompanyInformation(techChallengeCompanyModelData.CompanyName, companySections);
@@ -41,15 +39,12 @@ namespace CompanyMVC.Factories
                     companySectionData.SeniorityLevels[i],companySectionData.EmployeesAmount[i],
                     companySectionData.SalaryIncrementPercentage[i], companySectionData.BaseSalary[i]);
 
-                EmployeesInformation newEmployeesInformation = new EmployeesInformation();  
-                
+                EmployeesInformation newEmployeesInformation = new EmployeesInformation();
+                newEmployeesInformation.SetEmployeesPropeties(employeesProperties);
+                employeesInformationList.Add(newEmployeesInformation);
             }
-            
-            
-
-            return new List<EmployeesInformation>(); 
+            return employeesInformationList; 
         }
-
 
         private List<EmployeesProperty> GetSectionEmployeesPropertiesList(SeniorityLevels seniorityLevel, int employeesAmount, float salaryIncrementPercentage, float baseSalary)
         {
@@ -62,5 +57,6 @@ namespace CompanyMVC.Factories
 
             return employeesProperties;
         }
+
     }
 }
