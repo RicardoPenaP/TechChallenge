@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43d130148244554a8e3b16d3ad318ef, type: 3}
   m_Name: CeoCompanySectionData
   m_EditorClassIdentifier: 
-  companySectionName: 
-  seniorityLevels: 
-  employeesAmount: 
-  salaryIncrementPercentage: []
-  baseSalary: []
+  companySectionName: Ceo
+  seniorityLevels: 00000000
+  employeesAmount: 01000000
+  salaryIncrementPercentage:
+  - 100
+  baseSalary:
+  - 20000

@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43d130148244554a8e3b16d3ad318ef, type: 3}
   m_Name: PMsCompanySectionData
   m_EditorClassIdentifier: 
-  companySectionName: 
-  seniorityLevels: 
-  employeesAmount: 
-  salaryIncrementPercentage: []
-  baseSalary: []
+  companySectionName: Product Management
+  seniorityLevels: 0300000002000000
+  employeesAmount: 0a00000014000000
+  salaryIncrementPercentage:
+  - 10
+  - 5
+  baseSalary:
+  - 4000
+  - 2400
