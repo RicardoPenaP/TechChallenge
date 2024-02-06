@@ -1,21 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Company.CompanyMVC.CompanyView.InformationPanel;
 
-namespace Company
+namespace Company.CompanyMVC.CompanyView
 {
     public class CompanyView : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        [Header("Company View")]
+        [Header("Prefabs references")]
+        [SerializeField] private SectionInformationPropertiesView sectionInformationPropertiesViewPrefab;
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+        [Header("Runtime references")]
+        [SerializeField] private Transform sectionsInformationLayoutGroupTransform;
+
+
     }
 }
