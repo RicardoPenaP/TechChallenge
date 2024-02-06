@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Company.CompanyMVC.CompanyView.InformationPanel;
 using Company.CompanyMVC.Tools;
+using UnityEngine.UI;
 
 namespace Company.CompanyMVC.CompanyView
 {
@@ -12,6 +13,7 @@ namespace Company.CompanyMVC.CompanyView
         [Header("Runtime references")]
         [SerializeField] private CompanyViewFactory companyViewFactory;
         [SerializeField] private Transform sectionsInformationLayoutGroupTransform;
+        [SerializeField] private Button incrementSalariesButton;
 
         private List<SectionInformationPropertiesView> activeSectionInformationPropertiesViewList;
 
