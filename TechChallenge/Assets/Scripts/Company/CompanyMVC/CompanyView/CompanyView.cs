@@ -8,9 +8,6 @@ namespace Company.CompanyMVC.CompanyView
     public class CompanyView : MonoBehaviour
     {
         [Header("Company View")]
-        [Header("Prefabs references")]
-        [SerializeField] private SectionInformationPropertiesView sectionInformationPropertiesViewPrefab;
-
         [Header("Runtime references")]
         [SerializeField] private Transform sectionsInformationLayoutGroupTransform;
 
