@@ -1,6 +1,7 @@
 using UnityEngine;
 using MVC.Factories;
 using Company;
+using System;
 
 namespace MVC.Models
 {
@@ -10,11 +11,18 @@ namespace MVC.Models
         [Header("Runtime References")]
         [SerializeField] private CompanyModelFactory companyModelFactory;
 
+        public event Action OnIncreasedCompanySalaries;
+
         private CompanyInformation companyInformation;
 
         private void Awake()
         {
             companyInformation = companyModelFactory.CreateNewCompany();
+        }
+
+        public void IncreaseCompanySalaries()
+        {
+
         }
 
 
