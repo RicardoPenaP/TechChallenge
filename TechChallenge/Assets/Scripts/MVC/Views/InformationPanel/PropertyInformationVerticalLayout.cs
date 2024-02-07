@@ -15,6 +15,7 @@ namespace MVC.Views.InformationPanel
             if (!viewFactoryInitialized)
             {
                 companyViewFactory = FindObjectOfType<CompanyViewFactory>();
+                viewFactoryInitialized = companyViewFactory != null;
             }
         }
 
