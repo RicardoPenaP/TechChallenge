@@ -14,6 +14,20 @@ namespace Company
             this.companyName = companyName;
             this.companySectionsList = companySectionsList;
         }
+
+        public void IncreaseCompanySalaires()
+        {
+            foreach (CompanySection companySection in companySectionsList)
+            {
+                companySection.IncreaseSectionEmployeesSalaries();
+            }
+        }
+
+        public List<CompanySection> GetCompanySectionsList()
+        {
+            return companySectionsList;
+        }
+
     }
     
 }
