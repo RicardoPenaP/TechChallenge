@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using MVC.Views.ViewsData;
+using MVC.Views.InformationPanel;
 
 namespace MVC.Factories
 {
@@ -7,9 +9,16 @@ namespace MVC.Factories
     {
         [Header("Company View Factory")]
         [Header("Prefabs references")]
-        
+        [SerializeField] private SectionInformationPanel sectionInformationPanelPrefab;
         [SerializeField] private TextMeshProUGUI propertyInformationTextPrefab;
         
+
+        public SectionInformationPanel CreateSectionInformationPanel(Transform parent, SectionInformationViewData sectionInformationViewData)
+        {
+            SectionInformationPanel newSectionInformationPanel = Instantiate(sectionInformationPanelPrefab, parent);
+            newSectionInformationPanel.InitializeSectionInformationPanel(sectionInformationViewData);
+            return newSectionInformationPanel;
+        }
 
         public TextMeshProUGUI CreatePropertyInformationText(Transform parent, string text)
         {
