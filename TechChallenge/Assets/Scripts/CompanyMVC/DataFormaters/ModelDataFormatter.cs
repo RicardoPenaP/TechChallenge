@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Tools.DataFormatters
+namespace Company.DataFormatters
 {
     public static class ModelDataFormatter 
     {
