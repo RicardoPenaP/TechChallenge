@@ -12,6 +12,7 @@ namespace MVC.Models
         [SerializeField] private CompanyModelFactory companyModelFactory;
                 
         public event Action<CompanyInformation> OnCompanyInformationUpdated;
+        public event Action OnSalariesIncreased;
 
         private CompanyInformation companyInformation;
 
@@ -24,7 +25,7 @@ namespace MVC.Models
         public void IncreaseCompanySalaries()
         {
             companyInformation.IncreaseCompanySalaires();
-            OnCompanyInformationUpdated?.Invoke(companyInformation);
+            OnSalariesIncreased?.Invoke();
         }
 
 

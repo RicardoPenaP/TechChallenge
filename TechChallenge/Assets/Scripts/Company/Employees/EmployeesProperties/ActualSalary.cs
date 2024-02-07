@@ -25,7 +25,7 @@ namespace Company.Employees.EmployeesProperties
 
         public override string ToString()
         {
-            return value.ToString();
+            return $"{value}$";
         }
     }
 }
