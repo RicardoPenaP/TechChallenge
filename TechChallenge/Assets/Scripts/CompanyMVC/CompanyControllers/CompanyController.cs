@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CompanyMVC.CompanyViews;
-using CompanyMVC.CompanyModels;
+using MVC.Views;
+using MVC.Models;
 
-namespace CompanyMVC.CompanyControllers
+namespace MVC.Controllers
 {
     public class CompanyController : MonoBehaviour
     {

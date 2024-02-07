@@ -1,10 +1,10 @@
 using Company.Employees;
 using Company.Employees.EmployeesProperties;
 using Company.Enums;
-using CompanyMVC.CompanyModels.ModelData;
+using MVC.Models.ModelData;
 using System.Collections.Generic;
 
-namespace CompanyMVC.DataFormatters
+namespace MVC.DataFormatters
 {
     public static class ModelDataFormatter 
     {

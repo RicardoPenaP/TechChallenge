@@ -1,5 +1,5 @@
-using CompanyMVC.CompanyViews;
-using CompanyMVC.CompanyViews.InformationPanel;
+using MVC.Views;
+using MVC.Views.InformationPanel;
 using UnityEngine;
 
 namespace Company.CompanyMVC.Factories

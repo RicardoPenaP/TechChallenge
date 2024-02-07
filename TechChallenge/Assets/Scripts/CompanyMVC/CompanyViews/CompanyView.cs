@@ -1,11 +1,11 @@
-using CompanyMVC.CompanyViews.InformationPanel;
+using MVC.Views.InformationPanel;
 using Company.CompanyMVC.Factories;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CompanyMVC.CompanyViews
+namespace MVC.Views
 {
     public class CompanyView : MonoBehaviour
     {

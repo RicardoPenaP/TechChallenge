@@ -1,12 +1,12 @@
 using Company;
 using Company.Employees;
-using CompanyMVC.CompanyModels.ModelData;
-using CompanyMVC.DataFormatters;
+using MVC.Models.ModelData;
+using MVC.DataFormatters;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace CompanyMVC.Factories
+namespace MVC.Factories
 {
     public class CompanyModelFactory : MonoBehaviour
     {
