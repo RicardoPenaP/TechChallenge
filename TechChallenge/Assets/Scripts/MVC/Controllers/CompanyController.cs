@@ -10,7 +10,7 @@ namespace MVC.Controllers
     {
         [Header("Company Controller")]
         [SerializeField] private CompanyView companyView;
-        [SerializeField] private CompanyController companyController;
+        [SerializeField] private CompanyModel companyModel;
 
 
     }
