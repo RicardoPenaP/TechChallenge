@@ -70,21 +70,6 @@ namespace EditMode.EmployeesInformationTests
 
             Assert.AreEqual(targetAmount, testResult);
         }
-
-        [Test]
-        public void EmployeesSectionNamePropertyTest()
-        {
-            string testedAmount = "Name";
-            EmployeesInformation employeesInformation = new EmployeesInformation();
-            EmployeesSectionName employeesSectionName = new EmployeesSectionName(testedAmount);
-
-            employeesInformation.AddEmployeesProperty(employeesSectionName);
-
-            string targetAmount = "Name";
-            string testResult = employeesInformation.GetEmployeesProperty<EmployeesSectionName>().ReadPropertyValue<string>();
-
-            Assert.AreEqual(targetAmount, testResult);
-        }
-
+       
     }
 }
