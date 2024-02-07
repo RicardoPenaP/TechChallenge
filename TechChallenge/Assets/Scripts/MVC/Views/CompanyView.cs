@@ -40,12 +40,15 @@ namespace MVC.Views
             }
         }
 
-        public void UpdatedActualSalaries()
+        public void UpdatedActualSalaries(ActualSalaryViewUpdateData[] sectionsActualSalaryViewUpdateDatas)
         {
-            foreach (SectionInformationPanel sectionInformationPanel in activeSectionInformationPanelsList)
+            for (int i = 0; i < activeSectionInformationPanelsList.Count; i++)
             {
-                // Updated actual salaries logic  sectionInformationPanel.UpdateActualSalaryLayout()
-            }
+                if (activeSectionInformationPanelsList[i].SectionName == sectionsActualSalaryViewUpdateDatas[i].SectionName)
+                {
+                    activeSectionInformationPanelsList[i].UpdateActualSalaryLayout(sectionsActualSalaryViewUpdateDatas[i].ActualSalariesArray)
+                }
+            }            
         }
 
     }
