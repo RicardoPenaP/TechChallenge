@@ -6,6 +6,7 @@ using CompanyMVC.CompanyModel.ModelData;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 namespace CompanyMVC.Factories
 {
     public class CompanyModelFactory : MonoBehaviour
