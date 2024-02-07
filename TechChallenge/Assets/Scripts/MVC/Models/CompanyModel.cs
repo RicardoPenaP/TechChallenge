@@ -2,6 +2,7 @@ using UnityEngine;
 using MVC.Factories;
 using Company;
 using System;
+using System.Collections.Generic;
 
 namespace MVC.Models
 {
@@ -12,7 +13,7 @@ namespace MVC.Models
         [SerializeField] private CompanyModelFactory companyModelFactory;
                 
         public event Action<CompanyInformation> OnCompanyInformationUpdated;
-        public event Action OnSalariesIncreased;
+        public event Action<List<CompanySection>> OnSalariesIncreased;
 
         private CompanyInformation companyInformation;
 
@@ -24,9 +25,8 @@ namespace MVC.Models
 
         public void IncreaseCompanySalaries()
         {
-            companyInformation.IncreaseCompanySalaires();
-            companyInformation.
-            OnSalariesIncreased?.Invoke();
+            companyInformation.IncreaseCompanySalaires();            
+            OnSalariesIncreased?.Invoke(companyInformation.GetCompanySectionsList());
         }
 
 

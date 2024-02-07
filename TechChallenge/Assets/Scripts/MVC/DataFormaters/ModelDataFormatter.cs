@@ -1,3 +1,4 @@
+using Company;
 using Company.Employees;
 using Company.Employees.EmployeesProperties;
 using Company.Enums;
@@ -7,8 +8,7 @@ using System.Collections.Generic;
 namespace MVC.DataFormatters
 {
     public static class ModelDataFormatter 
-    {
-        //public static List<UpdatedSalariesModelData> Fortmat
+    {        
         public static List<EmployeesInformation> FormatCompanySectionDataToEmployeesInformationList(CompanySectionData companySectionData)
         {
             List<EmployeesInformation> employeesInformationList = new List<EmployeesInformation>();
