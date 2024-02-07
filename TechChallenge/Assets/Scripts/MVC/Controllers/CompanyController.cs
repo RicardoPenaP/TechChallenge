@@ -1,9 +1,10 @@
 using Company;
+using MVC.DataFormatters;
 using MVC.Models;
 using MVC.Views;
 using MVC.Views.ViewsData;
+using System.Collections.Generic;
 using UnityEngine;
-using MVC.DataFormatters;
 
 namespace MVC.Controllers
 {
@@ -17,6 +18,7 @@ namespace MVC.Controllers
         {
             companyView.OnIncrementSalariesButtonPressed += CompanyView_OnIncrementSalariesButtonPressed;
             companyModel.OnCompanyInformationUpdated += CompanyModel_OnCompanyInformationUpdated;
+            companyModel.OnSalariesIncreased += CompanyModel_OnSalariesIncreased;
         }
 
 
@@ -34,6 +36,11 @@ namespace MVC.Controllers
         {
             CompanyInformationViewData companyInformationViewData = ControllerDataFormatter.FormatCompanyInformationToCompanyInformationViewData(companyInformation);
             companyView.InitializeCompanySectionInformationPanels(companyInformationViewData);
+        }
+        private void CompanyModel_OnSalariesIncreased(List<CompanySection> companySections)
+        {
+            ActualSalaryViewUpdateData[] sectionsActualSalaryViewUpdateDatas = ControllerDataFormatter.FormatCompanySectionsToActualSalaryViewUpdateData(companySections);
+            companyView.UpdatedActualSalaries(sectionsActualSalaryViewUpdateDatas);
         }
     }
 }

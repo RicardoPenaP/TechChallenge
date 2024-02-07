@@ -49,5 +49,28 @@ namespace MVC.DataFormatters
 
             return new CompanyInformationViewData(companyInformation.CompanyName, sectionInformationViewDataArray);
         }
+
+        public static ActualSalaryViewUpdateData[] FormatCompanySectionsToActualSalaryViewUpdateData(List<CompanySection> companySections)
+        {
+            ActualSalaryViewUpdateData[] sectionsSalaryViewUpdateDataArray = new ActualSalaryViewUpdateData[companySections.Count];
+
+            for (int i = 0; i < sectionsSalaryViewUpdateDataArray.Length; i++)
+            {
+                string sectionName = companySections[i].GetSectionName();
+
+                List<EmployeesInformation> employeesInformation = companySections[i].GetEmployeesInformationList();
+                string[] actualSalariesText = new string[employeesInformation.Count];
+
+                for (int j = 0; j < actualSalariesText.Length; j++)
+                {
+                    actualSalariesText[i] = employeesInformation[i].GetEmployeesProperty<ActualSalary>().ToString();
+                }
+
+                ActualSalaryViewUpdateData newActualSalaryViewUpdateData = new ActualSalaryViewUpdateData(sectionName, actualSalariesText);
+                sectionsSalaryViewUpdateDataArray[i] = newActualSalaryViewUpdateData;
+            }
+
+            return sectionsSalaryViewUpdateDataArray;
+        }
     }
 }
