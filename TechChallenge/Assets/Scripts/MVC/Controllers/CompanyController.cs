@@ -12,6 +12,19 @@ namespace MVC.Controllers
         [SerializeField] private CompanyView companyView;
         [SerializeField] private CompanyModel companyModel;
 
+        private void Awake()
+        {
+            companyView.OnIncrementSalariesButtonPressed += CompanyView_OnIncrementSalariesButtonPressed;
+        }
 
+        private void OnDestroy()
+        {
+            companyView.OnIncrementSalariesButtonPressed -= CompanyView_OnIncrementSalariesButtonPressed;
+        }
+
+        private void CompanyView_OnIncrementSalariesButtonPressed()
+        {
+           //On increment button loggic pressed logic
+        }
     }
 }
