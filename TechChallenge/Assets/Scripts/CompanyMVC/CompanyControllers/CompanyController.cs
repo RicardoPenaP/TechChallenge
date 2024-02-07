@@ -8,7 +8,10 @@ namespace CompanyMVC.CompanyControllers
 {
     public class CompanyController : MonoBehaviour
     {
-        //[Header("Company Controller")]
-        //[SerializeField] private 
+        [Header("Company Controller")]
+        [SerializeField] private CompanyView companyView;
+        [SerializeField] private CompanyController companyController;
+
+
     }
 }
