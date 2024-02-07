@@ -18,12 +18,12 @@ namespace MVC.Factories
             List<CompanySection> companySections = new List<CompanySection>();
 
             for (int i = 0; i < techChallengeCompanyModelData.CompanySections.Length; i++)
-            {                            
-                companySections[i] = new CompanySection();
-                companySections[i].SetSectionName(techChallengeCompanyModelData.CompanySections[i].CompanySectionName);
+            {
+                CompanySection newCompanySection = new CompanySection();
+                newCompanySection.SetSectionName(techChallengeCompanyModelData.CompanySections[i].CompanySectionName);
                 List<EmployeesInformation> employeesInformationList = ModelDataFormatter.FormatCompanySectionDataToEmployeesInformationList(techChallengeCompanyModelData.CompanySections[i]);
-
-                companySections[i].SetEmployeesInformationList(employeesInformationList);
+                newCompanySection.SetEmployeesInformationList(employeesInformationList);
+                companySections.Add(newCompanySection);
             }
 
             return new CompanyInformation(techChallengeCompanyModelData.CompanyName, companySections);

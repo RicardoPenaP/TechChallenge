@@ -46,7 +46,7 @@ namespace MVC.Views
             {
                 if (activeSectionInformationPanelsList[i].SectionName == sectionsActualSalaryViewUpdateDatas[i].SectionName)
                 {
-                    activeSectionInformationPanelsList[i].UpdateActualSalaryLayout(sectionsActualSalaryViewUpdateDatas[i].ActualSalariesArray)
+                    activeSectionInformationPanelsList[i].UpdateActualSalaryLayout(sectionsActualSalaryViewUpdateDatas[i].ActualSalariesArray);
                 }
             }            
         }
