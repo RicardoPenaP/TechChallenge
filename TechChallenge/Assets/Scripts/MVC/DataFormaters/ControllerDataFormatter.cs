@@ -63,7 +63,7 @@ namespace MVC.DataFormatters
 
                 for (int j = 0; j < actualSalariesText.Length; j++)
                 {
-                    actualSalariesText[i] = employeesInformation[i].GetEmployeesProperty<ActualSalary>().ToString();
+                    actualSalariesText[j] = employeesInformation[j].GetEmployeesProperty<ActualSalary>().ToString();
                 }
 
                 ActualSalaryViewUpdateData newActualSalaryViewUpdateData = new ActualSalaryViewUpdateData(sectionName, actualSalariesText);
