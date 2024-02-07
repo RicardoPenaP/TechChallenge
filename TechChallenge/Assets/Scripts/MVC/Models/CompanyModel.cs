@@ -11,7 +11,7 @@ namespace MVC.Models
         [Header("Runtime References")]
         [SerializeField] private CompanyModelFactory companyModelFactory;
 
-        public event Action OnIncreasedCompanySalaries;
+        public event Action<CompanyInformation> OnIncreasedCompanySalaries;
 
         private CompanyInformation companyInformation;
 
@@ -22,7 +22,8 @@ namespace MVC.Models
 
         public void IncreaseCompanySalaries()
         {
-
+            companyInformation.IncreaseCompanySalaires();
+            OnIncreasedCompanySalaries?.Invoke(companyInformation);
         }
 
 
