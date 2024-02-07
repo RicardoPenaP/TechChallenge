@@ -16,8 +16,8 @@ namespace MVC.Models.ModelsData
         public string CompanySectionName => companySectionName;
         public SeniorityLevels[] SeniorityLevels => seniorityLevels;
         public int[] EmployeesAmount => employeesAmount;
-        public float[] SalaryIncrementPercentage => SalaryIncrementPercentage;
-        public float[] BaseSalary => BaseSalary;
+        public float[] SalaryIncrementPercentage => salaryIncrementPercentage;
+        public float[] BaseSalary => baseSalary;
 
 
         private void OnValidate()
