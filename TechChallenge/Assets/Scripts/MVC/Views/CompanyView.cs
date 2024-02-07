@@ -42,7 +42,10 @@ namespace MVC.Views
 
         public void UpdatedActualSalaries()
         {
-            //Implement the logic for the actual salaries uptade
+            foreach (SectionInformationPanel sectionInformationPanel in activeSectionInformationPanelsList)
+            {
+                // Updated actual salaries logic  sectionInformationPanel.UpdateActualSalaryLayout()
+            }
         }
 
     }
