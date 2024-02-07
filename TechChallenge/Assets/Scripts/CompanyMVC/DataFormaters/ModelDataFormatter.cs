@@ -1,12 +1,10 @@
-using Company;
 using Company.Employees;
 using Company.Employees.EmployeesProperties;
 using Company.Enums;
 using CompanyMVC.CompanyModel.ModelData;
 using System.Collections.Generic;
-using UnityEngine;
 
-namespace Company.DataFormatters
+namespace CompanyMVC.DataFormatters
 {
     public static class ModelDataFormatter 
     {
