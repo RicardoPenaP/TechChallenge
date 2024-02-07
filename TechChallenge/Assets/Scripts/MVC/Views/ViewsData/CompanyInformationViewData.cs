@@ -8,8 +8,9 @@ namespace MVC.Views.ViewsData
 
         public SectionInformationViewData[] CompanySectionsInformationViewDatas => companySectionsInformationViewDatas;
 
-        public CompanyInformationViewData(SectionInformationViewData[] companySectionsInformationViewDatas)
+        public CompanyInformationViewData(string companyName,SectionInformationViewData[] companySectionsInformationViewDatas)
         {
+            this.companyName = companyName;
             this.companySectionsInformationViewDatas = companySectionsInformationViewDatas;
         }
     }
