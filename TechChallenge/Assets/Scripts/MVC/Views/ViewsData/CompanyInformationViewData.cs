@@ -4,7 +4,7 @@ namespace MVC.Views.ViewsData
     {
         private SectionInformationViewData[] companySectionsInformationViewDatas;
 
-        SectionInformationViewData[] CompanySectionsInformationViewDatas => companySectionsInformationViewDatas;
+        public SectionInformationViewData[] CompanySectionsInformationViewDatas => companySectionsInformationViewDatas;
 
         public CompanyInformationViewData(SectionInformationViewData[] companySectionsInformationViewDatas)
         {

@@ -1,5 +1,6 @@
 using MVC.Factories;
 using MVC.Views.InformationPanel;
+using MVC.Views.ViewsData;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,9 +31,13 @@ namespace MVC.Views
             incrementSalariesButton.onClick.RemoveListener(() => OnIncrementSalariesButtonPressed?.Invoke());
         }
 
-        public void InitializeCompanySectionInformationPanels()
+        public void InitializeCompanySectionInformationPanels(CompanyInformationViewData companyInformationViewData)
         {
-            //Implement the initialization logic for all the section in the view
+            foreach (SectionInformationViewData sectionInformationViewData in companyInformationViewData.CompanySectionsInformationViewDatas)
+            {
+                SectionInformationPanel newSectionInformationPanel = companyViewFactory.CreateSectionInformationPanel(sectionsInformationLayoutGroupTransform, sectionInformationViewData);
+                activeSectionInformationPanelsList.Add(newSectionInformationPanel);
+            }
         }
 
         public void UpdatedActualSalaries()
