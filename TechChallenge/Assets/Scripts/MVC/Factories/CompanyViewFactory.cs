@@ -2,7 +2,7 @@ using MVC.Views;
 using MVC.Views.InformationPanel;
 using UnityEngine;
 
-namespace Company.CompanyMVC.Factories
+namespace MVC.Factories
 {
     public class CompanyViewFactory : MonoBehaviour
     {
