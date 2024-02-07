@@ -32,7 +32,7 @@ namespace MVC.Controllers
 
         private void CompanyModel_OnCompanyInformationUpdated(CompanyInformation companyInformation)
         {
-            
+            //companyView.
         }
     }
 }

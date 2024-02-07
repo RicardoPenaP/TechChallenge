@@ -22,5 +22,10 @@ namespace Company.Employees.EmployeesProperties
                 throw new InvalidOperationException($"Cannot convert value from int to {typeof(T)}");
             }
         }
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
     }
 }

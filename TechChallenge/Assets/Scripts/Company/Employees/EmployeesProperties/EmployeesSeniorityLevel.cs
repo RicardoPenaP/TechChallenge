@@ -25,6 +25,30 @@ namespace Company.Employees.EmployeesProperties
             {
                 throw new InvalidOperationException($"Cannot convert value from SeniorityLevels to {typeof(T)}");
             }
-        }        
+        }
+
+        public override string ToString()
+        {
+            string stringValue = "";
+            switch (value)
+            {
+                case SeniorityLevels.None:
+                    stringValue = "-";
+                    break;
+                case SeniorityLevels.Junior:
+                    stringValue = "Junior";
+                    break;
+                case SeniorityLevels.SemiSenior:
+                    stringValue = "Semi Senior";
+                    break;
+                case SeniorityLevels.Senior:
+                    stringValue = "Senior";
+                    break;
+                default:
+                    break;
+            };
+
+            return stringValue;
+        }
     }
 }
