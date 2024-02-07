@@ -19,7 +19,6 @@ namespace MVC.Models.ModelsData
         public float[] SalaryIncrementPercentage => salaryIncrementPercentage;
         public float[] BaseSalary => baseSalary;
 
-
         private void OnValidate()
         {
             if (employeesAmount.Length != seniorityLevels.Length)

@@ -10,20 +10,21 @@ namespace MVC.Models
         [Header("Company Model")]
         [Header("Runtime References")]
         [SerializeField] private CompanyModelFactory companyModelFactory;
-
-        public event Action<CompanyInformation> OnIncreasedCompanySalaries;
+                
+        public event Action<CompanyInformation> OnCompanyInformationUpdated;
 
         private CompanyInformation companyInformation;
 
-        private void Awake()
+        private void Start()
         {
             companyInformation = companyModelFactory.CreateNewCompany();
+            OnCompanyInformationUpdated?.Invoke(companyInformation);
         }
 
         public void IncreaseCompanySalaries()
         {
             companyInformation.IncreaseCompanySalaires();
-            OnIncreasedCompanySalaries?.Invoke(companyInformation);
+            OnCompanyInformationUpdated?.Invoke(companyInformation);
         }
 
 

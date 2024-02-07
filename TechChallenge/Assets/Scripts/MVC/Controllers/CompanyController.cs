@@ -15,7 +15,7 @@ namespace MVC.Controllers
         private void Awake()
         {
             companyView.OnIncrementSalariesButtonPressed += CompanyView_OnIncrementSalariesButtonPressed;
-            companyModel.OnIncreasedCompanySalaries += CompanyModel_OnIncreasedCompanySalaries;
+            companyModel.OnCompanyInformationUpdated += CompanyModel_OnIncreasedCompanySalaries;
         }
 
 
@@ -26,7 +26,7 @@ namespace MVC.Controllers
 
         private void CompanyView_OnIncrementSalariesButtonPressed()
         {
-           //On increment button loggic pressed logic
+            companyModel.IncreaseCompanySalaries();
         }
         private void CompanyModel_OnIncreasedCompanySalaries(Company.CompanyInformation obj)
         {
