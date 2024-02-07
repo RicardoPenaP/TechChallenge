@@ -1,7 +1,7 @@
 using Company.Enums;
 using UnityEngine;
 
-namespace MVC.Models.ModelData
+namespace MVC.Models.ModelsData
 {
     [CreateAssetMenu(fileName ="NewCompanySectionData", menuName = "Company Section Data")]
     public class CompanySectionData : ScriptableObject

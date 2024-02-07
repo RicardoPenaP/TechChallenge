@@ -1,7 +1,7 @@
 using Company.Employees;
 using Company.Employees.EmployeesProperties;
 using Company.Enums;
-using MVC.Models.ModelData;
+using MVC.Models.ModelsData;
 using System.Collections.Generic;
 
 namespace MVC.DataFormatters
