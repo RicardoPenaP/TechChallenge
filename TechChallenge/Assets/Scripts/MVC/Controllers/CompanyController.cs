@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using MVC.Views;
-using MVC.Models;
 using Company;
+using MVC.Models;
+using MVC.Views;
+using MVC.Views.ViewsData;
+using UnityEngine;
+using MVC.DataFormatters;
 
 namespace MVC.Controllers
 {
@@ -32,7 +32,8 @@ namespace MVC.Controllers
 
         private void CompanyModel_OnCompanyInformationUpdated(CompanyInformation companyInformation)
         {
-            //companyView.
+            CompanyInformationViewData companyInformationViewData = ControllerDataFormatter.FormatCompanyInformationToCompanyInformationViewData(companyInformation);
+            companyView.InitializeCompanySectionInformationPanels(companyInformationViewData);
         }
     }
 }

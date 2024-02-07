@@ -31,11 +31,11 @@ namespace MVC.DataFormatters
 
                 for (int j = 0; j < propertiesAmount; j++)
                 {
-                    seniorityLevelsArray[j] = employeesInformation[i].GetEmployeesProperty<EmployeesSeniorityLevel>().ToString();
-                    employeesAmountsArray[j] = employeesInformation[i].GetEmployeesProperty<EmployeesAmount>().ToString();
-                    salaryIncrementPercentagesArray[j] = employeesInformation[i].GetEmployeesProperty<SalaryIncrementPercentage>().ToString();
-                    baseSalariesArray[j] = employeesInformation[i].GetEmployeesProperty<BaseSalary>().ToString();
-                    actualSalariesArray[j] = employeesInformation[i].GetEmployeesProperty<ActualSalary>().ToString();
+                    seniorityLevelsArray[j] = employeesInformation[j].GetEmployeesProperty<EmployeesSeniorityLevel>().ToString();
+                    employeesAmountsArray[j] = employeesInformation[j].GetEmployeesProperty<EmployeesAmount>().ToString();
+                    salaryIncrementPercentagesArray[j] = employeesInformation[j].GetEmployeesProperty<SalaryIncrementPercentage>().ToString();
+                    baseSalariesArray[j] = employeesInformation[j].GetEmployeesProperty<BaseSalary>().ToString();
+                    actualSalariesArray[j] = employeesInformation[j].GetEmployeesProperty<ActualSalary>().ToString();
                 }
 
                 SectionInformationViewData newSectionInformationViewData = new SectionInformationViewData(sectionName,
