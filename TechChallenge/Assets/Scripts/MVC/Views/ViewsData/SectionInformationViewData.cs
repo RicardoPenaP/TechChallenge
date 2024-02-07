@@ -18,7 +18,7 @@ namespace MVC.Views.ViewsData
         public string[] EmployeesAmountArray => employeesAmountsArrary;
         public string[] SalaryIncrementPercentagesArray => salaryIncrementPercentagesArray;
         public string[] BaseSalariesArray => baseSalariesArray;
-        public string[] ActualSalariesArrar =>actualSalariesArray;
+        public string[] ActualSalariesArray =>actualSalariesArray;
 
         public SectionInformationViewData(string sectionName, string[] seniorityLevelsArray, string[] employeesAmountsArrary,
                                       string[] salaryIncrementPercentagesArray, string[] baseSalariesArray, string[] actualSalariesArray)

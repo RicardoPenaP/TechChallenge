@@ -17,11 +17,11 @@ namespace MVC.Views
 
         public event Action OnIncrementSalariesButtonPressed;
 
-        private List<SectionInformationPropertiesView> activeSectionInformationPropertiesViewList;
+        private List<SectionInformationPanel> activeSectionInformationPanelsList;
 
         private void Awake()
         {
-            activeSectionInformationPropertiesViewList = new List<SectionInformationPropertiesView>();
+            activeSectionInformationPanelsList = new List<SectionInformationPanel>();
             incrementSalariesButton.onClick.AddListener(() => OnIncrementSalariesButtonPressed?.Invoke());
         }
 
@@ -30,9 +30,14 @@ namespace MVC.Views
             incrementSalariesButton.onClick.RemoveListener(() => OnIncrementSalariesButtonPressed?.Invoke());
         }
 
-        public void AddCompanySectionInformation(CompanyViewUpdateData companyViewUpdateData)
+        public void InitializeCompanySectionInformationPanels()
         {
-            activeSectionInformationPropertiesViewList.Add(companyViewFactory.CreateSectionInformationPropertiesView(sectionsInformationLayoutGroupTransform, companyViewUpdateData));
+            //Implement the initialization logic for all the section in the view
+        }
+
+        public void UpdatedActualSalaries()
+        {
+            //Implement the logic for the actual salaries uptade
         }
 
     }
