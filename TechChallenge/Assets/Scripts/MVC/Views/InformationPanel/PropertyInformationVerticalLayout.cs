@@ -7,18 +7,16 @@ namespace MVC.Views.InformationPanel
 {
     public class PropertyInformationVerticalLayout : MonoBehaviour
     {
-        private static 
+        private static CompanyViewFactory companyViewFactory;
+        private bool viewFactoryInitialized = false;
 
-        // Start is called before the first frame update
-        void Start()
+        private void Awake()
         {
-        
+            if (!viewFactoryInitialized)
+            {
+                companyViewFactory = FindObjectOfType<CompanyViewFactory>();
+            }
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
     }
 }
