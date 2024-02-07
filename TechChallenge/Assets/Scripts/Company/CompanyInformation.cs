@@ -8,7 +8,8 @@ namespace Company
     {
         private string companyName;
         private List<CompanySection> companySectionsList;
-        
+
+        public string CompanyName => companyName;
         public CompanyInformation(string companyName,List<CompanySection> companySectionsList)
         {
             this.companyName = companyName;
