@@ -2,7 +2,7 @@ using UnityEngine;
 using CompanyMVC.Factories;
 using Company;
 
-namespace CompanyMVC.CompanyModel
+namespace CompanyMVC.CompanyModels
 {
     public class CompanyModel : MonoBehaviour
     {

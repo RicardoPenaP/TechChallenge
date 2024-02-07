@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace CompanyMVC.CompanyView.InformationPanel
+namespace CompanyMVC.CompanyViews.InformationPanel
 {
     public class SectionInformationPropertiesView : MonoBehaviour
     {

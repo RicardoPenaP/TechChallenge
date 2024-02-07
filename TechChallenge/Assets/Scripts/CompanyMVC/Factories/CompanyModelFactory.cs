@@ -1,6 +1,6 @@
 using Company;
 using Company.Employees;
-using CompanyMVC.CompanyModel.ModelData;
+using CompanyMVC.CompanyModels.ModelData;
 using CompanyMVC.DataFormatters;
 using System.Collections.Generic;
 using UnityEngine;
