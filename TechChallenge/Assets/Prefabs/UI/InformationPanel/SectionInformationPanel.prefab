@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7090869197645888151}
   - component: {fileID: 868858765475852631}
   - component: {fileID: 4650161564161052234}
+  - component: {fileID: 1452967145447644443}
   m_Layer: 5
   m_Name: SectionInformationPanel
   m_TagString: Untagged
@@ -77,6 +78,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1452967145447644443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511763831208613099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7c35d9d5d108a4cbe024b6848b9d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7111839251599577289
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1917148470392802343, guid: 8b3fb86e6cd2599419870d1fbe18476f, type: 3}
       propertyPath: m_fontSize
-      value: 66.4
+      value: 73.8
       objectReference: {fileID: 0}
     - target: {fileID: 1917148470392802343, guid: 8b3fb86e6cd2599419870d1fbe18476f, type: 3}
       propertyPath: m_VerticalAlignment

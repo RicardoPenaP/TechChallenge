@@ -11,6 +11,7 @@ namespace MVC.Factories
         [Header("Prefabs references")]
         [SerializeField] private SectionInformationPropertiesView sectionInformationPropertiesViewPrefab;
         [SerializeField] private TextMeshProUGUI propertyInformationTextPrefab;
+        
 
         public SectionInformationPropertiesView CreateSectionInformationPropertiesView(Transform parent, CompanyViewUpdateData sectionData)
         {
