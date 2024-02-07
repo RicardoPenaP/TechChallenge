@@ -1,6 +1,6 @@
 {
-    "name": "CompanyMVC",
-    "rootNamespace": "CompanyMVC",
+    "name": "MVC",
+    "rootNamespace": "MVC",
     "references": [
         "GUID:4e690938676398a4aa5da5f1e91d1f18",
         "GUID:6055be8ebefd69e48b49212b09b47b2f"
