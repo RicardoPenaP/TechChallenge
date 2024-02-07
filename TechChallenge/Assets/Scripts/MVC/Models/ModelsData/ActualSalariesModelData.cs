@@ -1,6 +1,6 @@
 namespace MVC.Models.ModelsData
 {
-    public class UpdatedSalariesModelData 
+    public class ActualSalariesModelData 
     {
         private string sectionName;
         private float[] actualSalariesArray;
@@ -8,7 +8,7 @@ namespace MVC.Models.ModelsData
         public string SectionName => sectionName;
         public float[] ActualSalariesArray => actualSalariesArray;
 
-        public UpdatedSalariesModelData(string sectionName, float[] actualSalariesArray )
+        public ActualSalariesModelData(string sectionName, float[] actualSalariesArray )
         {
             this.sectionName = sectionName;
             this.actualSalariesArray = actualSalariesArray;

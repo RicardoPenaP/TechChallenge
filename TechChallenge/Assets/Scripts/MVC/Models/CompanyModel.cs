@@ -25,6 +25,7 @@ namespace MVC.Models
         public void IncreaseCompanySalaries()
         {
             companyInformation.IncreaseCompanySalaires();
+            companyInformation.
             OnSalariesIncreased?.Invoke();
         }
 
