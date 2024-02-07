@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
 using MVC.Views.ViewsData;
+using TMPro;
+using UnityEngine;
 
 namespace MVC.Views.InformationPanel
 {

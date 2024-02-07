@@ -1,7 +1,5 @@
-using MVC.Views;
-using MVC.Views.InformationPanel;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 namespace MVC.Factories
 {

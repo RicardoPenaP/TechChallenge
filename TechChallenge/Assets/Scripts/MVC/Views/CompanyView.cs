@@ -1,5 +1,5 @@
-using MVC.Views.InformationPanel;
 using MVC.Factories;
+using MVC.Views.InformationPanel;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
