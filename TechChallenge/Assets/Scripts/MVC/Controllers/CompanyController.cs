@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MVC.Views;
 using MVC.Models;
+using Company;
 
 namespace MVC.Controllers
 {
@@ -15,7 +16,7 @@ namespace MVC.Controllers
         private void Awake()
         {
             companyView.OnIncrementSalariesButtonPressed += CompanyView_OnIncrementSalariesButtonPressed;
-            companyModel.OnCompanyInformationUpdated += CompanyModel_OnIncreasedCompanySalaries;
+            companyModel.OnCompanyInformationUpdated += CompanyModel_OnCompanyInformationUpdated;
         }
 
 
@@ -28,9 +29,10 @@ namespace MVC.Controllers
         {
             companyModel.IncreaseCompanySalaries();
         }
-        private void CompanyModel_OnIncreasedCompanySalaries(Company.CompanyInformation obj)
+
+        private void CompanyModel_OnCompanyInformationUpdated(CompanyInformation companyInformation)
         {
-            //On incremented salaries
+            
         }
     }
 }
