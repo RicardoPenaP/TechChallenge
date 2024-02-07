@@ -37,7 +37,7 @@ namespace MVC.Views.InformationPanel
         {
             foreach (Transform transforms in transform)
             {
-                Destroy(transform);
+                Destroy(transforms.gameObject);
             }
         }
 
